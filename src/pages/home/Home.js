@@ -4,6 +4,7 @@ import PlaceCategory from "../../component/placeCategory/PlaceCategory";
 import { Container, Title } from "./HomeStyle";
 import RestoRegistration from "../../component/restoRegistration/RestoRegistration";
 import FoodRecommend from "../../component/foodRecommend/FoodRecommend";
+import Footer from "../../component/footer/Footer";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <VariousCulinary />
       <RestoRegistration />
       <FoodRecommend />
+      <Footer />
     </div>
   );
 };

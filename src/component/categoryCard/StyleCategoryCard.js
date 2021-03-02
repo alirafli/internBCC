@@ -16,12 +16,41 @@ export const Content = styled.div.attrs((props) => ({
 `;
 
 export const Title = styled.h1`
-  padding: 27.4rem 0 0 3.1rem;
+  padding: 27rem 0 0 3.1rem;
   font-size: 2.4rem;
+  @media only screen and (max-width:1051px){
+    font-size: 2rem;
+    padding: 27.4rem 0 0 2.5rem;
+    @media only screen and (max-width:712px){
+      font-size: 1.6rem;
+      padding: 27.4rem 0 0 1rem;
+    }
+    @media only screen and (max-width:481px){
+      padding: 27.4rem 0 0 3.1rem;
+      font-size: 2.4rem;
+    }
+    @media only screen and (max-width:368px){
+      padding: 27.4rem 0 0 1rem;
+      font-size: 1.7rem;
+    }
 `;
 
 export const Paragraph = styled.p`
   padding: 0 0 3rem 3.1rem;
   font-size: 1.8rem;
   font-weight: normal;
+  @media only screen and (max-width:1051px){
+    padding: 0 0 3rem 2.6rem;
+    @media only screen and (max-width:712px){
+      padding: 0 0 3rem 1rem;
+      font-size: 1.6rem;
+    }
+    @media only screen and (max-width:481px){
+      padding: 0 0 3rem 3.1rem;
+      font-size: 1.8rem;
+    }
+    @media only screen and (max-width:368px){
+      padding: 0 0 3rem 1rem;
+      font-size: 1.6rem;
+    }
 `;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Container = styled.div`
   width: auto;
   height: 23rem;
-  background-color: #f9f9f9;
+  background-color: #E0E0E0;
   border-radius: 1rem;
   margin: 1.4rem 3.216rem;
   box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.1);
@@ -12,3 +12,4 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
+// background-color: #f9f9f9;
