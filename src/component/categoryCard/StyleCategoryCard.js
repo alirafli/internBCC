@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export const Content = styled.div.attrs((props) => ({
   image: props.image,
 }))`
-  background-color: #c4c4c4;
   background-image: url(${(props) => props.image});
   background-position: center;
   background-size: cover;
@@ -13,6 +12,11 @@ export const Content = styled.div.attrs((props) => ({
   margin: 1.5rem 1rem;
   border-radius: 1rem;
   color: #f9f9f9;
+  box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.1);
+  transition: 300ms;
+  &:hover {
+    margin: 0;
+  }
 `;
 
 export const Title = styled.h1`
@@ -54,3 +58,7 @@ export const Paragraph = styled.p`
       font-size: 1.6rem;
     }
 `;
+
+export const LinkWrapper = styled(Link)`
+  text-decoration: none;
+`

@@ -6,6 +6,11 @@ import {
   Title,
   Input,
   MainButton,
+  Checkbox,
+  ContentWrapper,
+  Paragraph,
+  Linked,
+  ExitWrapper,
 } from "../loginPage/StyleAccountForm.js";
 import forUserLogin from "../../api/forUserLogin";
 import { useAuth } from "../../config/Auth";
@@ -18,6 +23,7 @@ const RegisterPage = () => {
   const [Password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [check, setCheck] = useState(false);
 
   const handleUserSignup = async (e) => {
     e.preventDefault();
@@ -45,16 +51,19 @@ const RegisterPage = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>REGISTER</Title>
+        <ContentWrapper header>
+        <Title>Sign Up</Title>
+        <ExitWrapper />
+        </ContentWrapper>
         <MainForm onSubmit={handleUserSignup}>
           <Input
             type="text"
-            label="FullName"
+            label="Nama Lengkap"
             onChange={(e) => setName(e.target.value)}
           />
           <Input
             type="tel"
-            label="phone"
+            label="Nomor Telepon"
             onChange={(e) => setPhone(e.target.value)}
           />
           <Input
@@ -65,10 +74,23 @@ const RegisterPage = () => {
           />
           <Input
             type="password"
-            label="Password"
+            label="Kata Sandi"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <MainButton type="submit">Register</MainButton>
+          <ContentWrapper check>
+            <Checkbox
+              type="checkbox"
+              value={check}
+              onChange={(e) => setCheck(e.target.value)}
+            />
+            <Paragraph>Saya setuju dengan kebijakan privasi ...</Paragraph>
+          </ContentWrapper>
+          <MainButton type="submit" disabled={!check}>
+            Buat Akun
+          </MainButton>
+          <Paragraph style={{ margin: "2rem 0 0 0" }}>
+            Sudah memiliki akun? <Linked to="/signin">Sign In</Linked>
+          </Paragraph>
         </MainForm>
       </Wrapper>
     </Container>

@@ -5,9 +5,11 @@ import {
   MainForm,
   Title,
   Input,
-  Label,
   MainButton,
-  ForgotPassword,
+  Paragraph,
+  Linked,
+  ContentWrapper,
+  ExitWrapper,
 } from "./StyleAccountForm";
 import forUserLogin from "../../api/forUserLogin";
 import { useAuth } from "../../config/Auth";
@@ -39,7 +41,10 @@ const LoginPage = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>LOGIN</Title>
+      <ContentWrapper header>
+        <Title>Sign in</Title>
+        <ExitWrapper />
+        </ContentWrapper>
         <MainForm onSubmit={handleUserLogin}>
           <Input
             placeholder="example@gmail.com"
@@ -52,8 +57,10 @@ const LoginPage = () => {
             label="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <ForgotPassword to="/">Forgot your password?</ForgotPassword>
           <MainButton type="submit">Login</MainButton>
+          <Paragraph style={{ margin: "2rem 0 0 0" }}>
+            Belum memiliki akun? <Linked to="/signup">Sign Up</Linked>
+          </Paragraph>
         </MainForm>
       </Wrapper>
     </Container>

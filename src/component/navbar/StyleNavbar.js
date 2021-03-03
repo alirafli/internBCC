@@ -5,10 +5,10 @@ export const NavWrapper = styled.nav`
   position: absolute;
   min-width: 100%;
   width: 100%;
+  min-height: 5rem;
+  top: 0;
   padding: 2rem 0;
   z-index: 10;
-  top: 0;
-  min-height: 5rem;
 `;
 
 export const NavContainer = styled.div`
@@ -33,6 +33,7 @@ export const NavItem = styled(Link)`
     margin-right: 2.9rem;
   }
   &:hover {
+    opacity: .8;
   }
 `;
 
@@ -56,3 +57,10 @@ export const SignupStyle = {
   backgroundColor: "#FF7A45",
   border: "0.2rem solid #FF7A45",
 };
+
+export const NavbarBackground = styled.div`
+  min-width: 100%;
+  width: 100%;
+  min-height: 8rem;
+  background-color: #222222;
+`;

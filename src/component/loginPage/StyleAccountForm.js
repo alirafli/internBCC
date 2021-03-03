@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { TextField } from "@material-ui/core";
+import closeButton from "../../media/img/closeButton.png"
 
 export const Container = styled.div`
   min-height: 100vh;
@@ -12,7 +13,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   background-color: white;
-  width: 60rem;
+  width: 53rem;
   border-radius: 1rem;
   margin: 2rem;
   padding: 5rem;
@@ -30,7 +31,10 @@ export const MainForm = styled.form`
 export const Title = styled.h1`
   font-size: 4rem;
   font-weight: bold;
-  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3.6rem;
+  line-height: 4.4rem;
 `;
 
 export const Input = styled(TextField).attrs(() => ({
@@ -44,33 +48,63 @@ export const Input = styled(TextField).attrs(() => ({
 `;
 
 export const MainButton = styled.button`
-  background-color: #1f7a8c;
-  font-weight: bold;
+  background-color: #ff7a45;
   color: #fff;
   outline: none;
   border: none;
   padding: 1.3rem 0;
   margin-top: 3rem;
-  font-size: 1.5rem;
-  font-family: inherit;
-
-  border-radius: 2rem;
+  font-style: normal;
+  font-family: Montserrat;
+  font-size: 24px;
+  line-height: 29px;
+  border-radius: 1rem;
   transition: 0.2s all;
   &:hover {
     cursor: pointer;
-    background-color: #2cafc9;
+    background-color: #e75e27;
   }
-`;
-export const ForgotPassword = styled(Link)`
-  margin-left: 70%;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  &:hover {
-    color: #1f7a8c;
+  &:disabled {
+    background-color: #c4c4c4;
+    cursor: auto;
   }
 `;
 
+export const Checkbox = styled.input`
+  width: 3rem;
+  height: 3rem;
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: ${props => props.header ? "space-between;" : "flex-start"}
+`;
+
+export const Paragraph = styled.p`
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  letter-spacing: 0.03em;
+  margin-left: 2.7rem;
+
+  color: #000000;
+`;
+
+export const Linked = styled(Link)`
+ color: #FF7A45;
+ text-decoration: none;
+`
+
+export const ExitWrapper = styled.div`
+  background-image: url(${closeButton});
+  background-position: center;
+  background-size: cover;
+  width: 4rem;
+  height: 4rem;
+`
 // export const SecondaryButton = styled.a`
 //     background-color:#022B3A;
 //     font-weight:bold;
