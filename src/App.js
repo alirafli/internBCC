@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import GlobalStyle from "./style/GlobalStyle";
 import Navbar from "./component/navbar/Navbar";
 import Home from "./pages/home/Home";
-import LoginPage from "./component/loginPage/LoginPage";
-import RegisterPage from "./component/registerPage/RegisterPage";
+// import LoginPage from "./component/loginPage/LoginPage";
+// import RegisterPage from "./component/registerPage/RegisterPage";
 // import PrivateRoute from "./config/PrivateRoute";
 import { AuthContext } from "./config/Auth";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -26,8 +26,6 @@ function App() {
           <GlobalStyle />
           <Navbar />
           <Switch>
-            <Route path="/signin" component={LoginPage} />
-            <Route path="/signup" component={RegisterPage} />
             <Route path="/PlaceCategory" component={FullPlaceCollection} />
             <Route path="/VariousCulinary" component={FullVariousCulinary} />
             <Route path="/" component={Home} />

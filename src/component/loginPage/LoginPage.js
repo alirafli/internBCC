@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Background,
   Container,
   Wrapper,
   MainForm,
@@ -14,8 +15,9 @@ import {
 import forUserLogin from "../../api/forUserLogin";
 import { useAuth } from "../../config/Auth";
 import { Redirect } from "react-router-dom";
+// import Navbar from "../navbar/Navbar";
 
-const LoginPage = () => {
+const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
@@ -35,35 +37,56 @@ const LoginPage = () => {
   };
 
   if (isLoggedIn) {
-    return <Redirect to={"/"} />;
+    return (
+      <>
+        <Redirect to={"/"} />
+      </>
+    );
   }
 
   return (
-    <Container>
-      <Wrapper>
-      <ContentWrapper header>
-        <Title>Sign in</Title>
-        <ExitWrapper />
-        </ContentWrapper>
-        <MainForm onSubmit={handleUserLogin}>
-          <Input
-            placeholder="example@gmail.com"
-            type="email"
-            label="Email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            type="password"
-            label="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <MainButton type="submit">Login</MainButton>
-          <Paragraph style={{ margin: "2rem 0 0 0" }}>
-            Belum memiliki akun? <Linked to="/signup">Sign Up</Linked>
-          </Paragraph>
-        </MainForm>
-      </Wrapper>
-    </Container>
+    <>
+      {showModal ? (
+        <Background>
+          <Container>
+            <Wrapper>
+              <ContentWrapper header>
+                <Title>Sign in</Title>
+                <ExitWrapper
+                  onClick={() => setShowModal((prev) => !prev)}
+                  aria-label="close modal"
+                />
+              </ContentWrapper>
+              <MainForm onSubmit={handleUserLogin}>
+                <Input
+                  placeholder="example@gmail.com"
+                  type="email"
+                  label="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  type="password"
+                  label="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <MainButton type="submit">Login</MainButton>
+                <Paragraph style={{ margin: "2rem 0 0 0" }}>
+                  Belum memiliki akun?{" "}
+                  <Linked
+                    onClick={() => {
+                      setShowModal((prev) => !prev);
+                      setShowModalReg((prev) => !prev);
+                    }}
+                  >
+                    Sign Up
+                  </Linked>
+                </Paragraph>
+              </MainForm>
+            </Wrapper>
+          </Container>
+        </Background>
+      ) : null}
+    </>
   );
 };
 

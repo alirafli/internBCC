@@ -41,7 +41,7 @@ export const FoodWrapper = styled.div`
     height: 6rem;
     width: 6rem;
     margin: 0 2.6rem;
-    z-index: 99;
+    z-index: 9;
     box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.15);
   }
   .slick-disabled {

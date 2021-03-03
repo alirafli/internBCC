@@ -5,7 +5,6 @@ export const NavWrapper = styled.nav`
   position: absolute;
   min-width: 100%;
   width: 100%;
-  min-height: 5rem;
   top: 0;
   padding: 2rem 0;
   z-index: 10;

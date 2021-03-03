@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NavWrapper,
   NavContainer,
@@ -8,8 +8,21 @@ import {
   SignupStyle,
 } from "./StyleNavbar";
 import { AiFillBell } from "react-icons/ai";
+import LoginPage from "../loginPage/LoginPage";
+import RegisterPage from "../registerPage/RegisterPage";
 
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [showModalReg, setShowModalReg] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
+  const openModalReg = () => {
+    setShowModalReg((prev) => !prev);
+  };
+
   return (
     <NavWrapper>
       <NavContainer>
@@ -17,12 +30,22 @@ const Navbar = () => {
           <AiFillBell style={{ fontSize: "3.5rem" }} to="/" />
         </Logo>
         <div>
-          <NavItem to="/signin" style={LoginStyle}>
+          <NavItem style={LoginStyle} onClick={openModal}>
             Sign In
           </NavItem>
-          <NavItem to="/signup" style={SignupStyle}>
+          <LoginPage
+            showModal={showModal}
+            setShowModal={setShowModal}
+            setShowModalReg={setShowModalReg}
+          />
+          <NavItem style={SignupStyle} onClick={openModalReg}>
             Sign Up
           </NavItem>
+          <RegisterPage
+            showModalReg={showModalReg}
+            setShowModal={setShowModal}
+            setShowModalReg={setShowModalReg}
+          />
         </div>
       </NavContainer>
     </NavWrapper>

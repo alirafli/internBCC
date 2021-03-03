@@ -3,7 +3,22 @@ import { Link } from "react-router-dom";
 import { TextField } from "@material-ui/core";
 import closeButton from "../../media/img/closeButton.png"
 
+export const Background = styled.div`
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+`
+
 export const Container = styled.div`
+  position: relative;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -93,17 +108,19 @@ export const Paragraph = styled.p`
   color: #000000;
 `;
 
-export const Linked = styled(Link)`
+export const Linked = styled.span`
  color: #FF7A45;
- text-decoration: none;
+ cursor: pointer;
 `
 
 export const ExitWrapper = styled.div`
   background-image: url(${closeButton});
+  cursor: pointer;
   background-position: center;
   background-size: cover;
   width: 4rem;
   height: 4rem;
+  z-index: 10;
 `
 // export const SecondaryButton = styled.a`
 //     background-color:#022B3A;
