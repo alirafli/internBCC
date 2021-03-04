@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Background from "../../media/img/punyaRestoran.jpg";
 
 export const Container = styled.div`

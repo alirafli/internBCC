@@ -40,7 +40,7 @@ const Navbar = ({ isLoggedIn }) => {
         {isLoggedIn ? (
           <div>
             <NavItem>Anda Berhasil Masuk!</NavItem>
-            <NavItem style={SignupStyle} onClick={Logout}to="/">Sign Out</NavItem>
+            <NavItem style={SignupStyle} onClick={Logout} to="/">Sign Out</NavItem>
           </div>
         ) : (
           <div>
