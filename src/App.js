@@ -24,7 +24,7 @@ function App() {
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
           <GlobalStyle />
-          <Navbar />
+          <Navbar isLoggedIn={authTokens == undefined ? null:true}/>
           <Switch>
             <Route path="/PlaceCategory" component={FullPlaceCollection} />
             <Route path="/VariousCulinary" component={FullVariousCulinary} />
