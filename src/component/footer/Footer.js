@@ -14,33 +14,52 @@ import Youtube from "../../media/img/youtube.png";
 
 const Footer = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Title>INI LOGO</Title>
-      </Wrapper>
-      <Wrapper style={{ borderLeftStyle: "solid" }}>
-        <ContentWrapper>
-          <Title>PERUSAHAAN</Title>
-          <Paragraph>Tentang Kami</Paragraph>
-          <Paragraph>Tim</Paragraph>
-          <Paragraph>Mitra Perusahaan</Paragraph>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Title>KONTAK</Title>
-          <Paragraph>Hubungi Kami</Paragraph>
-          <Paragraph>FAQ</Paragraph>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Title>MEDIA SOSIAL</Title>
-          <ContentWrapper sosmed>
-            <SocialMedia image={Instagram} />
-            <SocialMedia image={Twitter} />
-            <SocialMedia image={Facebook} />
-            <SocialMedia image={Youtube} />
+    <>
+      <Container>
+        <Wrapper>
+          <Title>INI LOGO</Title>
+        </Wrapper>
+        <Wrapper style={{ borderLeftStyle: "solid" }}>
+          <ContentWrapper>
+            <Title>PERUSAHAAN</Title>
+            <Paragraph>Tentang Kami</Paragraph>
+            <Paragraph>Tim</Paragraph>
+            <Paragraph>Mitra Perusahaan</Paragraph>
           </ContentWrapper>
-        </ContentWrapper>
-      </Wrapper>
-    </Container>
+          <ContentWrapper>
+            <Title>KONTAK</Title>
+            <Paragraph>Hubungi Kami</Paragraph>
+            <Paragraph>FAQ</Paragraph>
+          </ContentWrapper>
+          <ContentWrapper>
+            <Title>MEDIA SOSIAL</Title>
+            <ContentWrapper sosmed>
+              <SocialMedia
+                image={Instagram}
+                href="https://instagram.com/"
+                target="_blank"
+              />
+              <SocialMedia
+                image={Twitter}
+                href="https://twitter.com/"
+                target="_blank"
+              />
+              <SocialMedia
+                image={Facebook}
+                href="https://facebook.com/"
+                target="_blank"
+              />
+              <SocialMedia
+                image={Youtube}
+                href="https://youtube.com/"
+                target="_blank"
+              />
+            </ContentWrapper>
+          </ContentWrapper>
+        </Wrapper>
+      </Container>
+      <Container copyright>restology.com. All Rights Reserved.</Container>
+    </>
   );
 };
 

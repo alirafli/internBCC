@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Content = styled.div.attrs((props) => ({
@@ -61,4 +61,5 @@ export const Paragraph = styled.p`
 
 export const LinkWrapper = styled(Link)`
   text-decoration: none;
-`
+`;
+

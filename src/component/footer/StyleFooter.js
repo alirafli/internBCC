@@ -3,9 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: auto;
   width: 100%;
-  background-color: #222222;
-  margin-top: 7rem;
+  background-color: ${props => props.copyright ? "#FF7A45" : "#222222"};
+  margin-top: ${props => props.copyright ? 0 : "7rem"};
+  padding: ${props => props.copyright ? "1rem" : "0"};
   display: flex;
+  font-size: 1.6rem;
+  color: #F9F9F9;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -48,6 +51,7 @@ export const Title = styled.h1`
 
 export const Paragraph = styled.p`
   font-style: normal;
+  cursor: pointer;
   font-weight: normal;
   font-size: 1.4rem;
   line-height: 1.6rem;
@@ -56,7 +60,7 @@ export const Paragraph = styled.p`
   color: #ffffff;
 `;
 
-export const SocialMedia = styled.div`
+export const SocialMedia = styled.a`
   background-image: url(${props => props.image});
   cursor: pointer;
   background-position: center;
