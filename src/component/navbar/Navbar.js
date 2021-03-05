@@ -38,7 +38,7 @@ const Navbar = ({ isLoggedIn }) => {
   const fetchUserName = async () => {
     const res = await forUserLogin.get(`/user/${count}`);
     setUserName(res.data);
-    console.log(res.data);
+    // console.log(res.data);
   };
 
   useEffect(() => {

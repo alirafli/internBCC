@@ -18,7 +18,7 @@ const FullPlaceCollection = () => {
           Koleksi di <Bold>Jakarta</Bold>
         </Title>
         <Paragraph>Temukan restoran, bar, cafe terbaik di lokasimu </Paragraph>
-        <GridPlaceCollection />
+        <GridPlaceCollection page="all"/>
       </Container>
       <Footer />
     </>

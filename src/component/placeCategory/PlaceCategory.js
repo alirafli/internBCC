@@ -23,7 +23,7 @@ const PlaceCollection = () => {
             <IoIosArrowForward />
           </LinkTo>
         </Paragraph>
-        <GridPlaceCollection />
+        <GridPlaceCollection page="home" />
       </Container>
     </div>
   );
