@@ -26,6 +26,8 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [check, setCheck] = useState(false);
 
+  const toggleChecked = () => setCheck(value => !value);
+
   const handleUserSignup = async (e) => {
     e.preventDefault();
     await forUserLogin.post("/user/register", {
@@ -84,8 +86,8 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
                 <ContentWrapper check>
                   <Checkbox
                     type="checkbox"
-                    value={check}
-                    onChange={(e) => setCheck(e.target.value)}
+                    checked={check}
+                    onChange={toggleChecked}
                   />
                   <Paragraph>
                     Saya setuju dengan kebijakan privasi ...

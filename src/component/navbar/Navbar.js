@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavWrapper,
   NavContainer,
@@ -11,10 +11,12 @@ import { AiFillBell } from "react-icons/ai";
 import LoginPage from "../loginPage/LoginPage";
 import RegisterPage from "../registerPage/RegisterPage";
 import {useAuth} from "../../config/Auth"
+import forUserLogin from "../../api/forUserLogin"
 
 const Navbar = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
   const [showModalReg, setShowModalReg] = useState(false);
+  const [UserName, setUserName] = useState("");
 
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -31,6 +33,18 @@ const Navbar = ({ isLoggedIn }) => {
     localStorage.clear()
   }
 
+  const count = 2;
+
+  const fetchUserName = async () => {
+    const res = await forUserLogin.get(`/user/${count}`);
+    setUserName(res.data);
+    console.log(res.data);
+  };
+
+  useEffect(() => {
+    fetchUserName();
+  }, []);
+
   return (
     <NavWrapper>
       <NavContainer>
@@ -39,7 +53,7 @@ const Navbar = ({ isLoggedIn }) => {
         </Logo>
         {isLoggedIn ? (
           <div>
-            <NavItem>Anda Berhasil Masuk!</NavItem>
+            <NavItem>{UserName.name}</NavItem>
             <NavItem style={SignupStyle} onClick={Logout} to="/">Sign Out</NavItem>
           </div>
         ) : (
