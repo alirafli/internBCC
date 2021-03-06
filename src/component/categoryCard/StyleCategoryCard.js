@@ -62,4 +62,3 @@ export const Paragraph = styled.p`
 export const LinkWrapper = styled(Link)`
   text-decoration: none;
 `;
-

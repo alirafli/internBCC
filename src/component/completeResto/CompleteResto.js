@@ -6,6 +6,9 @@ const CompleteResto = () => {
   return (
     <Container>
       <CompleteRestoCard />
+      <CompleteRestoCard />
+      <CompleteRestoCard />
+      <CompleteRestoCard />
     </Container>
   );
 };

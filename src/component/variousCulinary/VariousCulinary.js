@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Title,
@@ -13,8 +13,21 @@ import CulinaryCard from "../culinaryCard/CulinaryCard";
 import json2mq from "json2mq";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { IoIosArrowForward } from "react-icons/io";
+import Restaurant from "../../api/forUserLogin";
 
 const VariousCulinary = () => {
+  const [resto, getResto] = useState([]);
+
+  const fetchResto = async () => {
+    const res = await Restaurant.get("/restaurants/all");
+    getResto(res.data.data);
+    // console.log(res.data.data);
+  };
+
+  useEffect(() => {
+    fetchResto();
+  }, []);
+
   const matches = useMediaQuery(
     json2mq({
       minWidth: 481,
@@ -41,14 +54,18 @@ const VariousCulinary = () => {
       </Paragraph>
       <FoodWrapper>
         <Slider {...settings}>
-          <CulinaryCard name="1" />
-          <CulinaryCard name="2" />
-          <CulinaryCard name="3" />
-          <CulinaryCard name="4" />
-          <CulinaryCard name="5" />
-          <CulinaryCard name="6" />
-          <CulinaryCard name="7" />
-          <CulinaryCard name="8" />
+          {resto.map((props) => (
+            <CulinaryCard name = {props.name}/>
+          ))}
+
+          {/* <CulinaryCard name="resto 1" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 2" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 3" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 4" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 5" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 6" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 7" content={"kopi, cepat saji $$$"} />
+          <CulinaryCard name="resto 8" content={"kopi, cepat saji $$$"} /> */}
         </Slider>
       </FoodWrapper>
     </Container>

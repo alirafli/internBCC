@@ -5,7 +5,6 @@ import rateLogo from "../../media/img/rate.svg";
 
 export const Container = styled.div`
   width: 30%;
-  }
 `;
 
 export const PriceWrapper = styled.div`
@@ -50,6 +49,7 @@ export const Logo = styled.div`
 export const Checkbox = styled.input`
   width: 2rem;
   height: 2rem;
+  
 `;
 
 export const ContentWrapper = styled.div`

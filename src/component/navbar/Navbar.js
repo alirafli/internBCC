@@ -53,7 +53,7 @@ const Navbar = ({ isLoggedIn }) => {
         </Logo>
         {isLoggedIn ? (
           <div>
-            <NavItem>{UserName.name}</NavItem>
+            <NavItem>Berhasil Login</NavItem>
             <NavItem style={SignupStyle} onClick={Logout} to="/">Sign Out</NavItem>
           </div>
         ) : (

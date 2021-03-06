@@ -23,7 +23,7 @@ const PriceAndRating = () => {
         </ContentWrapper>
         <ContentWrapper>
           <Checkbox type="checkbox" />
-          <Paragraph>{`$$$$ (> 150000 IDR)`}</Paragraph>
+          <Paragraph>{`$$ (25000 - 75000 IDR)`}</Paragraph>
         </ContentWrapper>
         <ContentWrapper>
           <Checkbox type="checkbox" />
@@ -31,40 +31,40 @@ const PriceAndRating = () => {
         </ContentWrapper>
         <ContentWrapper>
           <Checkbox type="checkbox" />
-          <Paragraph>{`$$ (25000 - 75000 IDR)`}</Paragraph>
+          <Paragraph>{`$$$$ (> 150000 IDR)`}</Paragraph>
         </ContentWrapper>
       </PriceWrapper>
 
-      <PriceWrapper  style={{ marginTop: "1.8rem" }}>
+      <PriceWrapper style={{ marginTop: "1.8rem" }}>
         <Logo rate />
         <Title>Rating</Title>
       </PriceWrapper>
       <PriceWrapper column>
         <ContentWrapper>
           <Checkbox type="checkbox" />
-          <Logo rates/>
+          <Logo rates />
         </ContentWrapper>
         <ContentWrapper>
           <Checkbox type="checkbox" />
-          <Logo rates/>
-          <Logo rate />
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Logo rates/>
-          <Logo rate />
+          <Logo rates />
           <Logo rate />
         </ContentWrapper>
         <ContentWrapper>
           <Checkbox type="checkbox" />
-          <Logo rates/>
-          <Logo rate />
+          <Logo rates />
           <Logo rate />
           <Logo rate />
         </ContentWrapper>
         <ContentWrapper>
           <Checkbox type="checkbox" />
-          <Logo rates/>
+          <Logo rates />
+          <Logo rate />
+          <Logo rate />
+          <Logo rate />
+        </ContentWrapper>
+        <ContentWrapper>
+          <Checkbox type="checkbox" />
+          <Logo rates />
           <Logo rate />
           <Logo rate />
           <Logo rate />

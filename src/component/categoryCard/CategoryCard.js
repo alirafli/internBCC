@@ -1,7 +1,7 @@
 import React from "react";
 import { LinkWrapper, Content, Title, Paragraph } from "./StyleCategoryCard";
 
-const CategoryCard = ({ image, resto, count }) => {
+const CategoryCard = ({ image, resto, count, banner }) => {
   return (
     <LinkWrapper to="/VariousCulinary">
       <Content image={image}>
@@ -13,3 +13,5 @@ const CategoryCard = ({ image, resto, count }) => {
 };
 
 export default CategoryCard;
+
+

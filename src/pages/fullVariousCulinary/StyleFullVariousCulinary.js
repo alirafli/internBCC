@@ -37,3 +37,6 @@ export const Wrapper = styled.div`
   display: flex;
 
 `
+
+export const RestoWrapper = styled.div`
+`

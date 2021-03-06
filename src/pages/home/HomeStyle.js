@@ -15,10 +15,27 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin-top: -1rem;
+  margin-top: -2rem;
   font-style: normal;
   font-size: 6.4rem;
   color: #f9f9f9;
+`;
+
+export const Paragraph = styled.h1`
+  margin-top: 1rem;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  @media only screen and (max-width: 515px) {
+    font-size: 25px;
+  }
+  @media only screen and (max-width: 371px) {
+    font-size: 25px;
+  }
+  @media only screen and (max-width: 296px) {
+    font-size: 20px;
+  }
 `;
 
 export const ReserveDiv = styled.div`
@@ -30,4 +47,22 @@ export const ReserveDiv = styled.div`
   border-radius: 1rem;
   margin: 0 auto;
   weight: 600;
+`;
+
+export const Animation = styled.div`
+  width: 65.8rem;
+  height: 7.9rem;
+  margin: -1rem auto;
+  @media only screen and (max-width: 515px) {
+    width: 40.8rem;
+    height: 7.9rem;
+  }
+  @media only screen and (max-width: 371px) {
+    width: 30.8rem;
+    height: 7.9rem;
+  }
+  @media only screen and (max-width: 296px) {
+    width: 30.8rem;
+    height: 7.9rem;
+  }
 `;
