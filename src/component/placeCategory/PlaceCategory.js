@@ -12,7 +12,7 @@ import GridPlaceCollection from "../GridPlaceCollection/GridPlaceCollection";
 const PlaceCollection = () => {
   return (
     <div>
-      <Container>
+      <Container data-aos-once="true" data-aos="fade-up">
         <Title>
           Koleksi di <Bold>Jakarta</Bold>
         </Title>

@@ -30,7 +30,7 @@ const VariousCulinary = () => {
   };
 
   return (
-    <Container>
+    <Container data-aos-once="true" data-aos="fade-up">
       <Title>Aneka kuliner</Title>
       <Paragraph>
         Pilihan kuliner terbaik dan menarik{" "}

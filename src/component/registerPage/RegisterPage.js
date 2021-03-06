@@ -54,8 +54,8 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
   return (
     <>
       {showModalReg ? (
-        <Background>
-          <Container>
+        <Background data-aos-once="true" data-aos="fade">
+          <Container data-aos-once="true" data-aos="fade-up">
             <Wrapper>
               <ContentWrapper header>
                 <Title>Sign Up</Title>

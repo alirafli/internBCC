@@ -5,7 +5,7 @@ import {Container, Title, Paragraph} from "./StyleFoodRecommend"
 
 const FoodRecommend = () => {
   return (
-    <Container>
+    <Container data-aos-once="true" data-aos="fade-up">
       <Title>Bingung makan apa?</Title>
       <Paragraph>Klik aja dulu, siapa tau suka</Paragraph>
       <FoodList />

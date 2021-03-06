@@ -47,8 +47,8 @@ const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
   return (
     <>
       {showModal ? (
-        <Background>
-          <Container>
+        <Background data-aos-once="true" data-aos="fade">
+          <Container data-aos-once="true" data-aos="fade-up">
             <Wrapper>
               <ContentWrapper header>
                 <Title>Sign in</Title>

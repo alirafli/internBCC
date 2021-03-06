@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import VariousCulinary from "../../component/variousCulinary/VariousCulinary";
 import PlaceCategory from "../../component/placeCategory/PlaceCategory";
 import { Container, Title } from "./HomeStyle";
 import RestoRegistration from "../../component/restoRegistration/RestoRegistration";
 import FoodRecommend from "../../component/foodRecommend/FoodRecommend";
 import Footer from "../../component/footer/Footer";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init({ duration: 900 });
+  }, []);
   return (
     <div>
       <Container>
