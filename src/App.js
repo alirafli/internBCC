@@ -27,7 +27,7 @@ function App() {
           <Navbar isLoggedIn={authTokens == undefined ? null:true}/>
           <Switch>
             <Route path="/PlaceCategory" component={FullPlaceCollection} />
-            <Route path="/VariousCulinary" component={FullVariousCulinary} />
+            <Route path="/VariousCulinary/:id" component={FullVariousCulinary} />
             <Route path="/" component={Home} />
           </Switch>
         </Router>

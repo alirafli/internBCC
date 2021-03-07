@@ -38,6 +38,7 @@ const StyleGridPlaceCollection = ({ page }) => {
             {restoCat.map((resto) => (
               <Grid item xs={matches ? 3 : 6} key={resto.id}>
                 <CategoryCard
+                  id={resto.id}
                   image={resto.cardimage}
                   resto={resto.name}
                   count={resto.restaurants.length}
@@ -84,6 +85,7 @@ const StyleGridPlaceCollection = ({ page }) => {
             {restoCat.map((resto) => (
               <Grid item xs={matches ? 3 : 6} key={resto.id}>
                 <CategoryCard
+                id={resto.id}
                   image={resto.cardimage}
                   resto={resto.name}
                   count={resto.restaurants.length}
