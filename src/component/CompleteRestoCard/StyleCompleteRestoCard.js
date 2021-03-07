@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const RestoProfile = styled.div`
-  background: green;
+  background: yellow;
   width: 20rem;
   height: 20rem;
   border-radius: 1rem;

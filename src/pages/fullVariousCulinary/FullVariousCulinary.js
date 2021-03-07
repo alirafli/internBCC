@@ -32,7 +32,7 @@ const FullVariousCulinary = (props) => {
   }, []);
 
   const restaurant = restoByCat.filter((id) => id.id == restoId);
-  console.log(restaurant);
+  // console.log(restaurant);
 
   return (
     <>

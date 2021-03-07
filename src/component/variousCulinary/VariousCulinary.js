@@ -56,13 +56,13 @@ const VariousCulinary = () => {
               <IoIosArrowForward />
             </LinkTo>
           </Paragraph>
-          <FoodWrapper>
+          <FoodWrapper data-aos-once="true" data-aos="fade-up">
             <Slider {...settings}>
               {resto.map((props) => (
                 <CulinaryCard name={props.name} key={props.id} />
               ))}
             </Slider>
-          </FoodWrapper>{" "}
+          </FoodWrapper>
         </>
       )}
     </Container>
