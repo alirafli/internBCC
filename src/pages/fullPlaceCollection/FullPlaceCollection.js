@@ -7,7 +7,7 @@ import {
   Bold,
 } from "../../component/placeCategory/StylePlaceCategory";
 import Footer from "../../component/footer/Footer";
-import GridPlaceCollection from "../../component/GridPlaceCollection/GridPlaceCollection"
+import GridPlaceCollection from "../../component/GridPlaceCollection/GridPlaceCollection";
 
 const FullPlaceCollection = () => {
   return (
@@ -18,7 +18,7 @@ const FullPlaceCollection = () => {
           Koleksi di <Bold>Jakarta</Bold>
         </Title>
         <Paragraph>Temukan restoran, bar, cafe terbaik di lokasimu </Paragraph>
-        <GridPlaceCollection page="all"/>
+        <GridPlaceCollection page="all" />
       </Container>
       <Footer />
     </>

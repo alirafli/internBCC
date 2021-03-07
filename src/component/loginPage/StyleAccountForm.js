@@ -122,25 +122,3 @@ export const ExitWrapper = styled.div`
   height: 4rem;
   z-index: 10;
 `
-// export const SecondaryButton = styled.a`
-//     background-color:#022B3A;
-//     font-weight:bold;
-//     text-decoration:none;
-//     font-size:1.5rem;
-//     display:flex;
-//     justify-content:center;
-//     align-items:center;
-//     line-height: 1.6;
-
-//     color:#fff;
-//     outline:none;
-//     border:none;
-//     padding:1.2rem 0;
-//     border-radius:2rem;
-//     transition: .2s all;
-//     &:hover{
-//         cursor:pointer;
-//         background-color:#05668A;
-
-//     }
-// `

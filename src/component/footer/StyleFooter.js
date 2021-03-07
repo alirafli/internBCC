@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: auto;
   width: 100%;
-  background-color: ${props => props.copyright ? "#FF7A45" : "#222222"};
-  margin-top: ${props => props.copyright ? 0 : "7rem"};
-  padding: ${props => props.copyright ? "1rem" : "0"};
+  background-color: ${(props) => (props.copyright ? "#FF7A45" : "#222222")};
+  margin-top: ${(props) => (props.copyright ? 0 : "7rem")};
+  padding: ${(props) => (props.copyright ? "1rem" : "0")};
   display: flex;
   font-size: 1.6rem;
-  color: #F9F9F9;
+  color: #f9f9f9;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -29,15 +29,14 @@ export const Wrapper = styled.div`
     border-width: 0;
     padding: 3rem 0 3rem 0;
     margin: 0;
-        border-top-style: solid;
-        direction: column-reverse;
+    border-top-style: solid;
+    direction: column-reverse;
   }
 `;
 
 export const ContentWrapper = styled.div`
-  margin: ${props => props.sosmed ? null : "1rem"};
-  display: ${props => props.sosmed ? "flex" : null};
-
+  margin: ${(props) => (props.sosmed ? null : "1rem")};
+  display: ${(props) => (props.sosmed ? "flex" : null)};
 `;
 
 export const Title = styled.h1`
@@ -61,10 +60,10 @@ export const Paragraph = styled.p`
 `;
 
 export const SocialMedia = styled.a`
-  background-image: url(${props => props.image});
+  background-image: url(${(props) => props.image});
   cursor: pointer;
   background-position: center;
   background-size: cover;
   width: 4rem;
   height: 4rem;
-`
+`;

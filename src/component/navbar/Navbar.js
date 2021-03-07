@@ -10,8 +10,8 @@ import {
 import { AiFillBell } from "react-icons/ai";
 import LoginPage from "../loginPage/LoginPage";
 import RegisterPage from "../registerPage/RegisterPage";
-import {useAuth} from "../../config/Auth"
-import forUserLogin from "../../api/forUserLogin"
+import { useAuth } from "../../config/Auth";
+import forUserLogin from "../../api/forUserLogin";
 
 const Navbar = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
@@ -26,12 +26,12 @@ const Navbar = ({ isLoggedIn }) => {
     setShowModalReg((prev) => !prev);
   };
 
-  const {setAuthTokens} = useAuth();
+  const { setAuthTokens } = useAuth();
 
-  const Logout =() => {
-    setAuthTokens()
-    localStorage.clear()
-  }
+  const Logout = () => {
+    setAuthTokens();
+    localStorage.clear();
+  };
 
   const count = 2;
 
@@ -54,7 +54,9 @@ const Navbar = ({ isLoggedIn }) => {
         {isLoggedIn ? (
           <div>
             <NavItem>Berhasil Login</NavItem>
-            <NavItem style={SignupStyle} onClick={Logout} to="/">Sign Out</NavItem>
+            <NavItem style={SignupStyle} onClick={Logout} to="/">
+              Sign Out
+            </NavItem>
           </div>
         ) : (
           <div>
