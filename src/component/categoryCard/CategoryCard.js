@@ -13,5 +13,3 @@ const CategoryCard = ({ image, resto, count, banner }) => {
 };
 
 export default CategoryCard;
-
-

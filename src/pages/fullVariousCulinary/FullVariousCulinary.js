@@ -18,7 +18,7 @@ const FullVariousCulinary = () => {
   const fetchRestoByCat = async () => {
     const res = await Restaurant.get("/restaurants/all/");
     getRestoByCat(res.data.data);
-    console.log(res.data.data);
+    // console.log(res.data.data);
   };
 
   useEffect(() => {

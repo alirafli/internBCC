@@ -33,7 +33,7 @@ const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
       .then((res) => {
         res.status == 200 && setAuthTokens(res.data.token);
         setLoggedIn(true);
-        console.log(res);
+        // console.log(res);
       });
   };
 

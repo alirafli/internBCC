@@ -3,10 +3,10 @@ import { Container } from "./StyleGridPlaceCollection";
 import Grid from "@material-ui/core/Grid";
 import json2mq from "json2mq";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Background1 from "../../media/img/cepatSaji.jpg";
-import Background2 from "../../media/img/khasJepang.jpg";
-import Background3 from "../../media/img/kopi.jpg";
-import Background4 from "../../media/img/asliIndonesia.jpg";
+// import Background1 from "../../media/img/cepatSaji.jpg";
+// import Background2 from "../../media/img/khasJepang.jpg";
+// import Background3 from "../../media/img/kopi.jpg";
+// import Background4 from "../../media/img/asliIndonesia.jpg";
 import CategoryCard from "../categoryCard/CategoryCard";
 import Restaurant from "../../api/forUserLogin";
 

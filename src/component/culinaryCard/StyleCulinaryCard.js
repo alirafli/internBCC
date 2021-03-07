@@ -25,17 +25,27 @@ export const TextWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  @media only screen and (max-width:1060px){
+    font-size: 1.1rem;
+} 
+@media only screen and (max-width:480px){
+  font-size: 1.8rem;
+} 
 `;
 
 export const Paragraph = styled.p`
-  font-family: Raleway;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+  @media only screen and (max-width:708px){
+    font-size: 1rem;
+} 
+@media only screen and (max-width:480px){
+  font-size: 1.4rem;
+} 
 `;

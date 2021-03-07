@@ -35,6 +35,9 @@ export const Paragraph = styled.p`
 
 export const Wrapper = styled.div`
   display: flex;
+  @media only screen and (max-width:765px){
+    flex-direction: column;
+} 
 
 `
 

@@ -55,17 +55,17 @@ const VariousCulinary = () => {
       <FoodWrapper>
         <Slider {...settings}>
           {resto.map((props) => (
-            <CulinaryCard name = {props.name}/>
+            <CulinaryCard name={props.name} key={props.id} />
           ))}
 
-          {/* <CulinaryCard name="resto 1" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 2" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 3" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 4" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 5" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 6" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 7" content={"kopi, cepat saji $$$"} />
-          <CulinaryCard name="resto 8" content={"kopi, cepat saji $$$"} /> */}
+          {/* <CulinaryCard name="resto 1" />
+          <CulinaryCard name="resto 2"  />
+          <CulinaryCard name="resto 3"  />
+          <CulinaryCard name="resto 4"  />
+          <CulinaryCard name="resto 5"  />
+          <CulinaryCard name="resto 6"  />
+          <CulinaryCard name="resto 7"  />
+          <CulinaryCard name="resto 8"  /> */}
         </Slider>
       </FoodWrapper>
     </Container>

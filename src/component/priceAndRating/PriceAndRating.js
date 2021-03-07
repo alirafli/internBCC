@@ -7,70 +7,75 @@ import {
   Logo,
   Checkbox,
   ContentWrapper,
+  Responsive,
 } from "./StylePriceAndRating";
 
 const PriceAndRating = () => {
   return (
     <Container>
-      <PriceWrapper>
-        <Logo price />
-        <Title>Harga</Title>
-      </PriceWrapper>
-      <PriceWrapper column>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Paragraph>{`$ (< 25000 IDR)`}</Paragraph>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Paragraph>{`$$ (25000 - 75000 IDR)`}</Paragraph>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Paragraph>{`$$$ (75000 - 150000 IDR)`}</Paragraph>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Paragraph>{`$$$$ (> 150000 IDR)`}</Paragraph>
-        </ContentWrapper>
-      </PriceWrapper>
+      <Responsive>
+        <PriceWrapper>
+          <Logo price />
+          <Title>Harga</Title>
+        </PriceWrapper>
+        <PriceWrapper column>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Paragraph>{`$ (< 25000 IDR)`}</Paragraph>
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Paragraph>{`$$ (25000 - 75000 IDR)`}</Paragraph>
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Paragraph>{`$$$ (75000 - 150000 IDR)`}</Paragraph>
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Paragraph>{`$$$$ (> 150000 IDR)`}</Paragraph>
+          </ContentWrapper>
+        </PriceWrapper>
+      </Responsive>
 
-      <PriceWrapper style={{ marginTop: "1.8rem" }}>
-        <Logo rate />
-        <Title>Rating</Title>
-      </PriceWrapper>
-      <PriceWrapper column>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Logo rates />
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Logo rates />
+      <Responsive>
+        <PriceWrapper>
           <Logo rate />
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Logo rates />
-          <Logo rate />
-          <Logo rate />
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Logo rates />
-          <Logo rate />
-          <Logo rate />
-          <Logo rate />
-        </ContentWrapper>
-        <ContentWrapper>
-          <Checkbox type="checkbox" />
-          <Logo rates />
-          <Logo rate />
-          <Logo rate />
-          <Logo rate />
-          <Logo rate />
-        </ContentWrapper>
-      </PriceWrapper>
+          <Title>Rating</Title>
+        </PriceWrapper>
+        <PriceWrapper column>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Logo rates />
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Logo rates />
+            <Logo rate />
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Logo rates />
+            <Logo rate />
+            <Logo rate />
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Logo rates />
+            <Logo rate />
+            <Logo rate />
+            <Logo rate />
+          </ContentWrapper>
+          <ContentWrapper>
+            <Checkbox type="checkbox" />
+            <Logo rates />
+            <Logo rate />
+            <Logo rate />
+            <Logo rate />
+            <Logo rate />
+          </ContentWrapper>
+        </PriceWrapper>
+      </Responsive>
     </Container>
   );
 };
