@@ -46,7 +46,9 @@ const FullVariousCulinary = (props) => {
         ) : (
           <JumboTron background={restaurant[0].bannerimage}>
             <Title>{restaurant[0].name}</Title>
-            <Paragraph>Tersedia {restaurant[0].restaurants.length} restoran</Paragraph>
+            <Paragraph>
+              Tersedia {restaurant[0].restaurants.length} restoran
+            </Paragraph>
           </JumboTron>
         )}
 

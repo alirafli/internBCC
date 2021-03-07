@@ -17,10 +17,13 @@ import Restaurant from "../../api/forUserLogin";
 
 const VariousCulinary = () => {
   const [resto, getResto] = useState([]);
+  const [Loading, setLoading] = useState(false);
 
   const fetchResto = async () => {
+    setLoading(true);
     const res = await Restaurant.get("/restaurants/all");
     getResto(res.data.data);
+    setLoading(false);
     // console.log(res.data.data);
   };
 
@@ -41,24 +44,25 @@ const VariousCulinary = () => {
     slidesToShow: matches ? 4 : 2,
     slidesToScroll: matches ? 4 : 2,
   };
-
   return (
     <Container data-aos-once="true" data-aos="fade-up">
-      <Title>Aneka kuliner</Title>
-      <Paragraph>
-        Pilihan kuliner terbaik dan menarik{" "}
-        <LinkTo to="/VariousCulinary">
-          Lihat Semua
-          <IoIosArrowForward />
-        </LinkTo>
-      </Paragraph>
-      <FoodWrapper>
-        <Slider {...settings}>
-          {resto.map((props) => (
-            <CulinaryCard name={props.name} key={props.id} />
-          ))}
+      {Loading ? null : (
+        <>
+          <Title>Aneka kuliner</Title>
+          <Paragraph>
+            Pilihan kuliner terbaik dan menarik{" "}
+            <LinkTo to="/VariousCulinary">
+              Lihat Semua
+              <IoIosArrowForward />
+            </LinkTo>
+          </Paragraph>
+          <FoodWrapper>
+            <Slider {...settings}>
+              {resto.map((props) => (
+                <CulinaryCard name={props.name} key={props.id} />
+              ))}
 
-          {/* <CulinaryCard name="resto 1" />
+              {/* <CulinaryCard name="resto 1" />
           <CulinaryCard name="resto 2"  />
           <CulinaryCard name="resto 3"  />
           <CulinaryCard name="resto 4"  />
@@ -66,8 +70,10 @@ const VariousCulinary = () => {
           <CulinaryCard name="resto 6"  />
           <CulinaryCard name="resto 7"  />
           <CulinaryCard name="resto 8"  /> */}
-        </Slider>
-      </FoodWrapper>
+            </Slider>
+          </FoodWrapper>{" "}
+        </>
+      )}
     </Container>
   );
 };
