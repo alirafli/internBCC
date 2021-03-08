@@ -7,7 +7,7 @@ import FoodRecommend from "../../component/foodRecommend/FoodRecommend";
 import Footer from "../../component/footer/Footer";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import SearchBar, { Pilihan } from "../../component/searchBar/SearchBar";
+import SearchBar from "../../component/searchBar/SearchBar";
 
 const Home = () => {
   const [searchFill, setSearchFill] = useState("Jakarta");

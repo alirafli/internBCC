@@ -25,7 +25,7 @@ const CompleteResto = (props) => {
   return (
     <Container>
       {Loading
-        ? restoAll.map((resto) => <CompleteRestoCard />)
+        ? restoAll.map((resto) => <CompleteRestoCard key={resto.id}/>)
         : restoAll.map((resto) => (
             <CompleteRestoCard
               background={resto.restoimgs[0].image}

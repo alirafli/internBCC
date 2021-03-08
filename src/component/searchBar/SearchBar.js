@@ -14,7 +14,7 @@ const SearchBar = () => {
   const [choice, setChoice] = useState("a")
   // console.log(choice)
   return (
-    <Container>
+    <Container data-aos-once="true" data-aos="fade-up">
       <Wrapper>
         <Icon gps />
         <LocateWrapper>
@@ -31,7 +31,7 @@ const SearchBar = () => {
     </Container>
   );
 };
-// data-aos-once="true" data-aos="fade-up"
+
 export default SearchBar;
 
 
