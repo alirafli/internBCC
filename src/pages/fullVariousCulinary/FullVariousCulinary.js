@@ -24,7 +24,7 @@ const FullVariousCulinary = (props) => {
     const res = await Restaurant.get("/restocat/all/");
     getRestoByCat(res.data.data);
     setLoading(false);
-    // console.log(res.data.data);
+    console.log(res.data.data);
   };
 
   useEffect(() => {

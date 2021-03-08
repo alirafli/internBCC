@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import VariousCulinary from "../../component/variousCulinary/VariousCulinary";
 import PlaceCategory from "../../component/placeCategory/PlaceCategory";
 import { Container, Paragraph, Title } from "./HomeStyle";
@@ -7,8 +7,11 @@ import FoodRecommend from "../../component/foodRecommend/FoodRecommend";
 import Footer from "../../component/footer/Footer";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import SearchBar, { Pilihan } from "../../component/searchBar/SearchBar";
 
 const Home = () => {
+  const [searchFill, setSearchFill] = useState("Jakarta");
+
   useEffect(() => {
     Aos.init({ duration: 900 });
   }, []);
@@ -22,8 +25,9 @@ const Home = () => {
         <Paragraph data-aos-once="true" data-aos="fade-up">
           Pesan meja dan makanan lebih cepat dan praktis
         </Paragraph>
+        <SearchBar />
       </Container>
-      <PlaceCategory />
+      <PlaceCategory place={searchFill} />
       <VariousCulinary />
       <RestoRegistration />
       <FoodRecommend />

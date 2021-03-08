@@ -9,12 +9,12 @@ import {
 import { IoIosArrowForward } from "react-icons/io";
 import GridPlaceCollection from "../GridPlaceCollection/GridPlaceCollection";
 
-const PlaceCollection = () => {
+const PlaceCollection = ({place}) => {
   return (
     <div>
       <Container data-aos-once="true" data-aos="fade-up">
         <Title>
-          Koleksi di <Bold>Jakarta</Bold>
+          Koleksi di <Bold>{place}</Bold>
         </Title>
         <Paragraph>
           Temukan restoran, bar, cafe terbaik di lokasimu{" "}
