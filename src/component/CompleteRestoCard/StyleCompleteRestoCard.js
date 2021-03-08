@@ -9,7 +9,9 @@ export const Container = styled.div`
 `;
 
 export const RestoProfile = styled.div`
-  background: yellow;
+  background-image: url(${(props) => props.background});
+  background-position: center;
+  background-size: cover;
   width: 20rem;
   height: 20rem;
   border-radius: 1rem;

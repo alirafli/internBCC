@@ -16,10 +16,11 @@ const CompleteRestoCard = ({
   dollar,
   review,
   restoId,
+  background,
 }) => {
   return (
     <Container>
-      <RestoProfile />
+      <RestoProfile background={background}/>
       <ContentWrapper>
         <Title>{name}</Title>
         <TextWrapper>@ @ @ {review} ulasan</TextWrapper>
