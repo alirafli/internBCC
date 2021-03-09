@@ -19,44 +19,41 @@ const FullVariousCulinary = (props) => {
 
   const restoId = props.match.params.id;
 
-  const fetchRestoByCat = async () => {
-    setLoading(true);
-    const res = await Restaurant.get(`/restocat/${restoId}`);
-    getRestoByCat(res.data.data);
-    setLoading(false);
-    // console.log(res.data.data);
-  };
-
   useEffect(() => {
+    const fetchRestoByCat = async () => {
+      setLoading(true);
+      const res = await Restaurant.get(`/restocat/${restoId}`);
+      getRestoByCat(res.data.data);
+      setLoading(false);
+      // console.log(res.data.data);
+    };
     fetchRestoByCat();
-  }, []);
+  }, [restoId]);
 
-  const restaurant = restoByCat
-  console.log(restaurant);
+  const restaurant = restoByCat;
+  // console.log(restaurant);
 
   return (
     <>
       <NavbarBackground />
       <Container>
-        <>
-          {Loading ? (
-            <JumboTron background={DefaultBanner}>
-              <Title>Kopi</Title>
-              <Paragraph>Tersedia 2 restoran</Paragraph>
-            </JumboTron>
-          ) : (
-            <JumboTron background={restaurant.bannerimage}>
-              <Title>{restaurant.name}</Title>
-              <Paragraph>
-                Tersedia {restaurant.restaurants.length} restoran
-              </Paragraph>
-            </JumboTron>
-          )}
-          <Wrapper>
-            <PriceAndRating />
-            <CompleteResto />
-          </Wrapper>
-        </>
+        {Loading ? (
+          <JumboTron background={DefaultBanner}>
+            <Title>Kopi</Title>
+            <Paragraph>Tersedia 2 restoran</Paragraph>
+          </JumboTron>
+        ) : (
+          <JumboTron background={restaurant.bannerimage}>
+            <Title>{restaurant.name}</Title>
+            <Paragraph>
+              Tersedia {restaurant.restaurants.length} restoran
+            </Paragraph>
+          </JumboTron>
+        )}
+        <Wrapper>
+          <PriceAndRating />
+          <CompleteResto />
+        </Wrapper>
       </Container>
     </>
   );

@@ -42,7 +42,7 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
         password: Password,
       })
       .then((res) => {
-        res.status == 200 && setAuthTokens(res.data.token);
+        res.status === 200 && setAuthTokens(res.data.token);
         setLoggedIn(true);
       });
   };

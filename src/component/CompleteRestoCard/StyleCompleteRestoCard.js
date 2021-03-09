@@ -5,7 +5,7 @@ import Clock from "../../media/img/clock.svg";
 
 export const Container = styled.div`
   display: flex;
-  margin: ${(props) => (props.top == 1 ? `0` : `3rem`)} 0 3rem 0;
+  margin: ${(props) => (props.top === 1 ? `0` : `3rem`)} 0 3rem 0;
 `;
 
 export const RestoProfile = styled.div`

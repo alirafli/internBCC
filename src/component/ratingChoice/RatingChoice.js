@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import RadioButton, {
   Container,
   Title,
@@ -12,12 +12,13 @@ import json2mq from "json2mq";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const RatingChoice = () => {
-  const [radioValue, setRadio] = useState(0);
+  // const [radioValue, setRadio] = useState(0);
   const rates1 = [1];
   const rates2 = [1, 2];
   const rates3 = [1, 2, 3];
   const rates4 = [1, 2, 3, 4];
   const rates5 = [1, 2, 3, 4, 5];
+  let keys = 0;
   // console.log("Rating: " + radioValue);
 
   const matches = useMediaQuery(
@@ -38,6 +39,7 @@ const RatingChoice = () => {
             matches ? (
               rates1.map(() => (
                 <img
+                  key={(keys += 1)}
                   src={RateIcon}
                   alt="Logo"
                   style={{ paddingRight: ".5rem" }}
@@ -46,16 +48,20 @@ const RatingChoice = () => {
             ) : (
               <RateWrapper>
                 <P>1</P>
-                <img src={RateIcon} alt="Logo" style={{ paddingRight: ".5rem" }}
+                <img
+                  key={(keys += 1)}
+                  src={RateIcon}
+                  alt="Logo"
+                  style={{ paddingRight: ".5rem" }}
                 />
               </RateWrapper>
             )
           }
           name="radio"
           value={1}
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -65,6 +71,7 @@ const RatingChoice = () => {
             matches ? (
               rates2.map(() => (
                 <img
+                  key={(keys += 1)}
                   src={RateIcon}
                   alt="Logo"
                   style={{ paddingRight: ".5rem" }}
@@ -74,6 +81,7 @@ const RatingChoice = () => {
               <RateWrapper>
                 <P>2</P>
                 <img
+                  key={(keys += 1)}
                   src={RateIcon}
                   alt="Logo"
                   style={{ paddingRight: ".5rem" }}
@@ -83,9 +91,9 @@ const RatingChoice = () => {
           }
           name="radio"
           value={2}
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -95,6 +103,7 @@ const RatingChoice = () => {
             matches ? (
               rates3.map(() => (
                 <img
+                  key={(keys += 1)}
                   src={RateIcon}
                   alt="Logo"
                   style={{ paddingRight: ".5rem" }}
@@ -113,9 +122,9 @@ const RatingChoice = () => {
           }
           name="radio"
           value={3}
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -125,6 +134,7 @@ const RatingChoice = () => {
             matches ? (
               rates4.map(() => (
                 <img
+                  key={(keys += 1)}
                   src={RateIcon}
                   alt="Logo"
                   style={{ paddingRight: ".5rem" }}
@@ -143,9 +153,9 @@ const RatingChoice = () => {
           }
           name="radio"
           value={4}
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -155,6 +165,7 @@ const RatingChoice = () => {
             matches ? (
               rates5.map(() => (
                 <img
+                  key={(keys += 1)}
                   src={RateIcon}
                   alt="Logo"
                   style={{ paddingRight: ".5rem" }}
@@ -173,9 +184,9 @@ const RatingChoice = () => {
           }
           name="radio"
           value={5}
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
     </Container>

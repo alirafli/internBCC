@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   NavWrapper,
   NavContainer,
@@ -11,12 +11,12 @@ import { AiFillBell } from "react-icons/ai";
 import LoginPage from "../loginPage/LoginPage";
 import RegisterPage from "../registerPage/RegisterPage";
 import { useAuth } from "../../config/Auth";
-import forUserLogin from "../../api/forUserLogin";
+// import forUserLogin from "../../api/forUserLogin";
 
 const Navbar = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
   const [showModalReg, setShowModalReg] = useState(false);
-  const [UserName, setUserName] = useState("");
+  // const [UserName, setUserName] = useState("");
 
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -33,17 +33,17 @@ const Navbar = ({ isLoggedIn }) => {
     localStorage.clear();
   };
 
-  const count = 2;
+  // const count = 2;
 
-  const fetchUserName = async () => {
-    const res = await forUserLogin.get(`/user/${count}`);
-    setUserName(res.data);
-    // console.log(res.data);
-  };
+  // const fetchUserName = async () => {
+  //   const res = await forUserLogin.get(`/user/${count}`);
+  //   setUserName(res.data);
+  //   console.log(res.data);
+  // };
 
-  useEffect(() => {
-    fetchUserName();
-  }, []);
+  // useEffect(() => {
+  //   fetchUserName();
+  // }, []);
 
   return (
     <NavWrapper>
@@ -53,14 +53,14 @@ const Navbar = ({ isLoggedIn }) => {
         </Logo>
         {isLoggedIn ? (
           <div>
-            <NavItem>Berhasil Login</NavItem>
+            <NavItem to="#">Berhasil Login</NavItem>
             <NavItem style={SignupStyle} onClick={Logout} to="/">
               Sign Out
             </NavItem>
           </div>
         ) : (
           <div>
-            <NavItem style={LoginStyle} onClick={openModal}>
+            <NavItem to="#" style={LoginStyle} onClick={openModal}>
               Sign In
             </NavItem>
             <LoginPage
@@ -68,7 +68,7 @@ const Navbar = ({ isLoggedIn }) => {
               setShowModal={setShowModal}
               setShowModalReg={setShowModalReg}
             />
-            <NavItem style={SignupStyle} onClick={openModalReg}>
+            <NavItem to="#" style={SignupStyle} onClick={openModalReg}>
               Sign Up
             </NavItem>
             <RegisterPage

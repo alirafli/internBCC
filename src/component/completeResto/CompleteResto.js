@@ -9,23 +9,22 @@ const CompleteResto = (props) => {
   const [Loading, setLoading] = useState(false);
   const restoId = props.match.params.id;
 
-  const fetchRestoAll = async () => {
-    setLoading(true);
-    const res = await Restaurant.get("/restocat/" + restoId);
-    getRestoAll(res.data.data.restaurants);
-    setLoading(false);
-    // console.log(res.data.data.restaurants);
-  };
-
   useEffect(() => {
+    const fetchRestoAll = async () => {
+      setLoading(true);
+      const res = await Restaurant.get("/restocat/" + restoId);
+      getRestoAll(res.data.data.restaurants);
+      setLoading(false);
+      // console.log(res.data.data.restaurants);
+    };
     fetchRestoAll();
-  }, []);
+  }, [restoId]);
 
   // console.log(restoId)
   return (
     <Container>
       {Loading
-        ? restoAll.map((resto) => <CompleteRestoCard key={resto.id}/>)
+        ? restoAll.map((resto) => <CompleteRestoCard key={resto.id} />)
         : restoAll.map((resto) => (
             <CompleteRestoCard
               background={resto.restoimgs[0].image}

@@ -14,36 +14,33 @@ import {
 } from "./StyleAccountForm";
 import forUserLogin from "../../api/forUserLogin";
 import { useAuth } from "../../config/Auth";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 // import Navbar from "../navbar/Navbar";
 
 const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  // const [isLoggedIn, setLoggedIn] = useState(false);
 
   const handleUserLogin = async (e) => {
     e.preventDefault();
-    await forUserLogin
-      .post("user/login", {
-        email: Email,
-        password: Password,
-      })
-      .then((res) => {
-        res.status == 200 && setAuthTokens(res.data.token);
-        setLoggedIn(true);
-        // console.log(res);
-      });
+    const res = await forUserLogin.post("user/login", {
+      email: Email,
+      password: Password,
+    });
+    res.status === 200 && setAuthTokens(res.data.token);
+    // setLoggedIn(true);
+    // console.log(res);
   };
 
-  if (isLoggedIn) {
-    return (
-      <>
-        <Redirect to={"/"} />
-      </>
-    );
-  }
+  // if (isLoggedIn) {
+  //   return (
+  //     <>
+  //       <Redirect to={"/"} />
+  //     </>
+  //   );
+  // }
 
   return (
     <>

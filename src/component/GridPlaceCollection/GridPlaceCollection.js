@@ -9,17 +9,16 @@ import Restaurant from "../../api/forUserLogin";
 const StyleGridPlaceCollection = ({ page }) => {
   const [restoCat, getRestoCat] = useState([]);
 
-  const fetchCategory = async () => {
-    const res = await Restaurant.get(
-      `/restocat/all${page == `home` ? `?limit=4` : `/`}`
-    );
-    getRestoCat(res.data.data);
-    // console.log(res.data.data);
-  };
-
   useEffect(() => {
+    const fetchCategory = async () => {
+      const res = await Restaurant.get(
+        `/restocat/all${page === `home` ? `?limit=4` : `/`}`
+      );
+      getRestoCat(res.data.data);
+      // console.log(res.data.data);
+    };
     fetchCategory();
-  }, []);
+  }, [page]);
 
   const matches = useMediaQuery(
     json2mq({
@@ -28,7 +27,7 @@ const StyleGridPlaceCollection = ({ page }) => {
   );
   return (
     <>
-      {page == "home" ? (
+      {page === "home" ? (
         <Container>
           <Grid container justify="space-between">
             {restoCat.map((resto) => (

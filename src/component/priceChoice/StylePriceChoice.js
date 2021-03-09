@@ -95,7 +95,7 @@ export default function RadioButton({ value, onChange, name, id, label }) {
     <Label>
       {label}
       <Input
-        id={id}
+        key={id}
         type="radio"
         role="radio"
         name={name}

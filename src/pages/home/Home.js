@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import VariousCulinary from "../../component/variousCulinary/VariousCulinary";
 import PlaceCategory from "../../component/placeCategory/PlaceCategory";
 import { Container, Paragraph, Title } from "./HomeStyle";
@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 import SearchBar from "../../component/searchBar/SearchBar";
 
 const Home = () => {
-  const [searchFill, setSearchFill] = useState("Jakarta");
+  // const [searchFill, setSearchFill] = useState("Jakarta");
 
   useEffect(() => {
     Aos.init({ duration: 900 });
@@ -27,7 +27,7 @@ const Home = () => {
         </Paragraph>
         <SearchBar />
       </Container>
-      <PlaceCategory place={searchFill} />
+      <PlaceCategory place="Jakarta" />
       <VariousCulinary />
       <RestoRegistration />
       <FoodRecommend />
