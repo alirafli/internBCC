@@ -1,14 +1,19 @@
 import React from "react";
 import PriceChoice from "../priceChoice/PriceChoice";
 import RatingChoice from "../ratingChoice/RatingChoice";
-import { Container } from "./StylePriceAndRating";
+import { Container, Wrapper } from "./StylePriceAndRating";
+import FoodCategoryChoice from "../foodCategoryChoice/FoodCategoryChoice";
 
-const PriceAndRating = () => {
+const PriceAndRating = ({ foodCat }) => {
   return (
     <Container>
-      <PriceChoice />
-      <RatingChoice />
-      
+      <Wrapper>
+        <PriceChoice />
+      </Wrapper>
+      <Wrapper>
+        <RatingChoice />
+      </Wrapper>
+      {foodCat ? <FoodCategoryChoice /> : null}
     </Container>
   );
 };

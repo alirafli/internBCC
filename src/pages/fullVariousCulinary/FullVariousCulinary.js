@@ -51,7 +51,7 @@ const FullVariousCulinary = (props) => {
           </JumboTron>
         )}
         <Wrapper>
-          <PriceAndRating />
+          <PriceAndRating foodCat={false}/>
           <CompleteResto />
         </Wrapper>
       </Container>

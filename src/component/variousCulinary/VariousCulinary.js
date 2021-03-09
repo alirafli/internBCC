@@ -51,7 +51,7 @@ const VariousCulinary = () => {
           <Title>Aneka kuliner</Title>
           <Paragraph>
             Pilihan kuliner terbaik dan menarik{" "}
-            <LinkTo to="/VariousCulinary">
+            <LinkTo to="/Resto/all">
               Lihat Semua
               <IoIosArrowForward />
             </LinkTo>
