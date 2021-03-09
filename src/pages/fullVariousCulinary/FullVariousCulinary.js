@@ -21,7 +21,7 @@ const FullVariousCulinary = (props) => {
 
   const fetchRestoByCat = async () => {
     setLoading(true);
-    const res = await Restaurant.get("/restocat/all/");
+    const res = await Restaurant.get(`/restocat/${restoId}`);
     getRestoByCat(res.data.data);
     setLoading(false);
     // console.log(res.data.data);
@@ -31,8 +31,8 @@ const FullVariousCulinary = (props) => {
     fetchRestoByCat();
   }, []);
 
-  const restaurant = restoByCat.filter((id) => id.id == restoId);
-  // console.log(restaurant);
+  const restaurant = restoByCat
+  console.log(restaurant);
 
   return (
     <>
@@ -45,10 +45,10 @@ const FullVariousCulinary = (props) => {
               <Paragraph>Tersedia 2 restoran</Paragraph>
             </JumboTron>
           ) : (
-            <JumboTron background={restaurant[0].bannerimage}>
-              <Title>{restaurant[0].name}</Title>
+            <JumboTron background={restaurant.bannerimage}>
+              <Title>{restaurant.name}</Title>
               <Paragraph>
-                Tersedia {restaurant[0].restaurants.length} restoran
+                Tersedia {restaurant.restaurants.length} restoran
               </Paragraph>
             </JumboTron>
           )}
