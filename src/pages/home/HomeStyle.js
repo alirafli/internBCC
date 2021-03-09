@@ -19,6 +19,12 @@ export const Title = styled.h1`
   font-style: normal;
   font-size: 6.4rem;
   color: #f9f9f9;
+  @media only screen and (max-width: 532px) {
+    font-size: 5rem;
+  }
+  @media only screen and (max-width: 371px) {
+    font-size: 3rem;
+  }
 `;
 
 export const Paragraph = styled.h1`
@@ -26,15 +32,12 @@ export const Paragraph = styled.h1`
   font-family: Raleway;
   font-style: normal;
   font-weight: 600;
-  font-size: 36px;
-  @media only screen and (max-width: 515px) {
-    font-size: 25px;
+  font-size: 3.6rem;
+  @media only screen and (max-width: 532px) {
+    font-size: 2.5rem;
   }
   @media only screen and (max-width: 371px) {
-    font-size: 25px;
-  }
-  @media only screen and (max-width: 296px) {
-    font-size: 20px;
+    font-size: 2rem;
   }
 `;
 

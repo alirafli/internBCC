@@ -16,6 +16,9 @@ export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 500px) {
+    width: 95%;
+  }
 `;
 
 export const NavItem = styled(Link)`
@@ -27,24 +30,35 @@ export const NavItem = styled(Link)`
   color: #f1f1f1;
   border-radius: 1rem;
   padding: 1rem 2.5rem;
-
   &:not(:last-child) {
     margin-right: 2.9rem;
   }
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
+  }
+  @media only screen and (max-width: 300px) {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 `;
 
-export const Logo = styled(Link)`
-transition: all 0.2s;
+export const LogoWrapper = styled(Link)`
+
 }
-&:visited {
-  color: #F1F1F1;
-}
-&:hover {
-  color: #B9B9B9;
-}
+`;
+
+export const Logo = styled.img`
+  max-width: 100%;
+  height: auto;
+  @media only screen and (max-width: 670px) {
+    max-width: 80%;
+  }
+  @media only screen and (max-width: 460px) {
+    max-width: 40%;
+  }
 `;
 
 export const LoginStyle = {
@@ -60,6 +74,15 @@ export const SignupStyle = {
 export const NavbarBackground = styled.div`
   min-width: 100%;
   width: 100%;
-  min-height: 8rem;
+  min-height: 9rem;
   background-color: #222222;
+`;
+
+export const ButtonContainer = styled.div`
+  @media only screen and (max-width: 540px) {
+    margin-left: -5rem;
+  }
+  @media only screen and (max-width: 460px) {
+    margin-left: -15rem;
+  }
 `;

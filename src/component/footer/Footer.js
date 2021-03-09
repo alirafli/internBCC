@@ -6,10 +6,12 @@ import {
   Title,
   Paragraph,
   SocialMedia,
+  Logo,
 } from "./StyleFooter";
 import Instagram from "../../media/img/instagram.png";
 import Twitter from "../../media/img/twitter.png";
 import Facebook from "../../media/img/facebook.png";
+import RestoLogo from "../../media/img/restologyLogo.svg";
 import Youtube from "../../media/img/youtube.png";
 
 const Footer = () => {
@@ -17,7 +19,7 @@ const Footer = () => {
     <>
       <Container>
         <Wrapper>
-          <Title>INI LOGO</Title>
+          <Logo src={RestoLogo} alt="" />
         </Wrapper>
         <Wrapper style={{ borderLeftStyle: "solid" }}>
           <ContentWrapper>

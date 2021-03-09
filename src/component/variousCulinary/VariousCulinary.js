@@ -24,7 +24,7 @@ const VariousCulinary = () => {
     const res = await Restaurant.get("/restaurants/all");
     getResto(res.data.data);
     setLoading(false);
-    // console.log(res.data.data);
+    console.log(res.data.data);
   };
 
   useEffect(() => {
@@ -59,7 +59,15 @@ const VariousCulinary = () => {
           <FoodWrapper data-aos-once="true" data-aos="fade-up">
             <Slider {...settings}>
               {resto.map((props) => (
-                <CulinaryCard name={props.name} key={props.id} />
+                <CulinaryCard
+                  name={props.name}
+                  key={props.id}
+                  review={props.review}
+                  image={props.restoimgs[0].image}
+                  city={props.city}
+                  price={props.dollar}
+                  rate={props.rate}
+                />
               ))}
             </Slider>
           </FoodWrapper>

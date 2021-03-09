@@ -1,13 +1,13 @@
 import React from "react";
 import { Container, TextWrapper, Title, Paragraph } from "./StyleCulinaryCard";
 
-const StyleCulinaryCard = ({ name, content, count }) => {
+const StyleCulinaryCard = ({ name, review, image, city, price, rate }) => {
   return (
-    <Container>
+    <Container image={image}>
       <TextWrapper>
         <Title>{name}</Title>
-        <Paragraph>Indonesia, Nasi</Paragraph>
-        <Paragraph>`0 0 0 0 0 (2 ulasan)`</Paragraph>
+        <Paragraph>{city} {price}</Paragraph>
+        <Paragraph>{rate} ({review} ulasan)</Paragraph>
       </TextWrapper>
     </Container>
   );

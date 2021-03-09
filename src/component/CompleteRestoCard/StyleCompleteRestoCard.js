@@ -6,6 +6,10 @@ import Clock from "../../media/img/clock.svg";
 export const Container = styled.div`
   display: flex;
   margin: ${(props) => (props.top === 1 ? `0` : `3rem`)} 0 3rem 0;
+  flex-direction: row;
+  @media only screen and (max-width: 529px) {
+    flex-direction: column;
+  }
 `;
 
 export const RestoProfile = styled.div`

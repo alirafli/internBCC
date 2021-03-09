@@ -19,7 +19,7 @@ const PriceChoice = () => {
   );
   return (
     <Container>
-      <Wrapper>
+      <Wrapper price>
         <Icon />
         <Title> Harga</Title>
       </Wrapper>

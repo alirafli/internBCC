@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: auto;
+  max-width: 28.5rem;
   height: 23rem;
-  background-color: #e0e0e0;
+  background-image: url(${(props) => props.image});
+  background-position: center;
+  background-size: cover;
   border-radius: 1rem;
-  margin: 1.4rem 3.216rem;
+  margin: 1.4rem 1.5rem;
   box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.1);
   display: flex;
   align-items: stretch;
@@ -14,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-  width: auto;
+  max-width: 28.5rem;
   height: 9.1rem;
   display: flex;
   padding-left: 1rem;
@@ -29,12 +31,12 @@ export const Title = styled.h1`
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 2.2rem;
-  @media only screen and (max-width:1060px){
+  @media only screen and (max-width: 1060px) {
     font-size: 1.1rem;
-} 
-@media only screen and (max-width:480px){
-  font-size: 1.8rem;
-} 
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -42,10 +44,10 @@ export const Paragraph = styled.p`
   font-weight: normal;
   font-size: 1.3rem;
   line-height: 1.4rem;
-  @media only screen and (max-width:708px){
+  @media only screen and (max-width: 708px) {
     font-size: 1rem;
-} 
-@media only screen and (max-width:480px){
-  font-size: 1.4rem;
-} 
+  }
+  @media only screen and (max-width: 480px) {
+    font-size: 1.4rem;
+  }
 `;

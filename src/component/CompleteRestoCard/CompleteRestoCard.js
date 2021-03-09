@@ -16,6 +16,7 @@ const CompleteRestoCard = ({
   dollar,
   review,
   restoId,
+  city,
   background,
 }) => {
   return (
@@ -25,7 +26,7 @@ const CompleteRestoCard = ({
         <Title>{name}</Title>
         <TextWrapper>@ @ @ {review} ulasan</TextWrapper>
         <TextWrapper underline>
-          kopi, cepat saji <Dots> . </Dots> $$$$
+          {city} <Dots> . </Dots> $$$$
         </TextWrapper>
         <TextWrapper>
           <Icon gps />

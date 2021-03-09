@@ -67,3 +67,14 @@ export const SocialMedia = styled.a`
   width: 4rem;
   height: 4rem;
 `;
+
+export const Logo = styled.img`
+  max-width: 100%;
+  height: auto;
+  @media only screen and (max-width: 670px) {
+    max-width: 80%;
+  }
+  @media only screen and (max-width: 460px) {
+    max-width: 40%;
+  }
+`;

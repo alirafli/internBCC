@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import {
   NavWrapper,
   NavContainer,
+  LogoWrapper,
   Logo,
   NavItem,
   LoginStyle,
   SignupStyle,
+  ButtonContainer,
 } from "./StyleNavbar";
-import { AiFillBell } from "react-icons/ai";
 import LoginPage from "../loginPage/LoginPage";
 import RegisterPage from "../registerPage/RegisterPage";
 import { useAuth } from "../../config/Auth";
+import RestoLogo from "../../media/img/restologyLogo.svg";
 // import forUserLogin from "../../api/forUserLogin";
 
 const Navbar = ({ isLoggedIn }) => {
@@ -48,18 +50,18 @@ const Navbar = ({ isLoggedIn }) => {
   return (
     <NavWrapper>
       <NavContainer>
-        <Logo to="/">
-          <AiFillBell style={{ fontSize: "3.5rem" }} to="/" />
-        </Logo>
+        <LogoWrapper to="/">
+          <Logo src={RestoLogo} alt="" />
+        </LogoWrapper>
         {isLoggedIn ? (
-          <div>
+          <ButtonContainer>
             <NavItem to="#">Berhasil Login</NavItem>
             <NavItem style={SignupStyle} onClick={Logout} to="/">
               Sign Out
             </NavItem>
-          </div>
+          </ButtonContainer>
         ) : (
-          <div>
+          <ButtonContainer>
             <NavItem to="#" style={LoginStyle} onClick={openModal}>
               Sign In
             </NavItem>
@@ -76,7 +78,7 @@ const Navbar = ({ isLoggedIn }) => {
               setShowModal={setShowModal}
               setShowModalReg={setShowModalReg}
             />
-          </div>
+          </ButtonContainer>
         )}
       </NavContainer>
     </NavWrapper>
