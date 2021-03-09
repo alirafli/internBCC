@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import RadioButton, {
   Container,
   Title,
@@ -7,7 +7,7 @@ import RadioButton, {
 } from "../priceChoice/StylePriceChoice";
 
 const FoodCategoryChoice = () => {
-  const [radioValue, setRadio] = useState("");
+  // const [radioValue, setRadio] = useState("");
   // console.log("Food Category: " + radioValue);
   return (
     <Container>
@@ -20,9 +20,9 @@ const FoodCategoryChoice = () => {
           label="Nasi"
           name="radio"
           value="nasi"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -31,9 +31,9 @@ const FoodCategoryChoice = () => {
           label="Pizza"
           name="radio"
           value="pizza"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -42,9 +42,9 @@ const FoodCategoryChoice = () => {
           label="Kopi"
           name="radio"
           value="kopi"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -53,9 +53,9 @@ const FoodCategoryChoice = () => {
           label="Cepat Saji"
           name="radio"
           value="cepat saji"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -64,9 +64,9 @@ const FoodCategoryChoice = () => {
           label="Indonesia"
           name="radio"
           value="indonesia"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -75,9 +75,9 @@ const FoodCategoryChoice = () => {
           label="Roti Bakar"
           name="radio"
           value="roti bakar"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -86,9 +86,9 @@ const FoodCategoryChoice = () => {
           label="Japanese Food"
           name="radio"
           value="japanese food"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
 
@@ -97,9 +97,9 @@ const FoodCategoryChoice = () => {
           label="Sushi"
           name="radio"
           value="sushi"
-          onChange={(e) => {
-            setRadio(e.target.value);
-          }}
+          // onChange={(e) => {
+          //   setRadio(e.target.value);
+          // }}
         />
       </Wrapper>
     </Container>
