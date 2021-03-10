@@ -24,7 +24,7 @@ const VariousCulinary = () => {
     const res = await Restaurant.get("/restaurants/all");
     getResto(res.data.data);
     setLoading(false);
-    console.log(res.data.data);
+    // console.log(res.data.data);
   };
 
   useEffect(() => {

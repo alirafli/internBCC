@@ -4,6 +4,7 @@ import { Container, Title, Paragraph, Wrapper } from "./StyleAnekaKuliner";
 import Restaurant from "../../api/forUserLogin";
 import CompleteRestoCard from "../../component/CompleteRestoCard/CompleteRestoCard";
 import PriceAndRating from "../../component/priceAndRating/PriceAndRating";
+import Footer from "../../component/footer/Footer";
 
 const AnekaKuliner = () => {
   const [resto, getResto] = useState([]);
@@ -27,7 +28,7 @@ const AnekaKuliner = () => {
         <Title>Aneka Kuliner</Title>
         <Paragraph>Pilihan kuliner terbaik dan menarik</Paragraph>
         <Wrapper>
-        <PriceAndRating foodCat={true}/>
+          <PriceAndRating foodCat={true} />
           <div>
             {Loading
               ? null
@@ -47,6 +48,7 @@ const AnekaKuliner = () => {
           </div>
         </Wrapper>
       </Container>
+      <Footer />
     </>
   );
 };

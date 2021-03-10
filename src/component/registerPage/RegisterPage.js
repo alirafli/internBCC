@@ -15,7 +15,7 @@ import {
 } from "../loginPage/StyleAccountForm.js";
 import forUserLogin from "../../api/forUserLogin";
 import { useAuth } from "../../config/Auth";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
   const [Name, setName] = useState("");
@@ -23,7 +23,7 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
   const [Phone, setPhone] = useState("");
   const [Password, setPassword] = useState("");
   const { setAuthTokens } = useAuth();
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  // const [isLoggedIn, setLoggedIn] = useState(false);
   const [check, setCheck] = useState(false);
 
   const toggleChecked = () => setCheck(value => !value);
@@ -43,13 +43,13 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
       })
       .then((res) => {
         res.status === 200 && setAuthTokens(res.data.token);
-        setLoggedIn(true);
+        // setLoggedIn(true);
       });
   };
 
-  if (isLoggedIn) {
-    return <Redirect to={"/"} />;
-  }
+  // if (isLoggedIn) {
+  //   return <Redirect to={"/"} />;
+  // }
 
   return (
     <>

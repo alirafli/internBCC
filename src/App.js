@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FullPlaceCollection from "./pages/fullPlaceCollection/FullPlaceCollection";
 import FullVariousCulinary from "./pages/fullVariousCulinary/FullVariousCulinary";
 import AnekaKuliner from "./pages/anekaKuliner/AnekaKuliner"
+import Restoran from "./pages/restoran/Restoran"
 
 function App() {
   const existingToken = JSON.parse(localStorage.getItem("tokens"));
@@ -23,11 +24,12 @@ function App() {
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
           <GlobalStyle />
-          <Navbar isLoggedIn={!authTokens ? null:true}/>
+          <Navbar isLoggedIn={!authTokens ? false:true}/>
           <Switch>
             <Route path="/PlaceCategory" component={FullPlaceCollection} />
             <Route path="/VariousCulinary/:id" component={FullVariousCulinary} />
             <Route path="/Resto/all" component={AnekaKuliner} />
+            <Route path="/Resto/restaurant" component={Restoran} />
             <Route path="/" component={Home} />
           </Switch>
         </Router>

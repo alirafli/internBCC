@@ -3,7 +3,7 @@ import { Container, TextWrapper, Title, Paragraph } from "./StyleCulinaryCard";
 
 const StyleCulinaryCard = ({ name, review, image, city, price, rate }) => {
   return (
-    <Container image={image}>
+    <Container image={image} to={"/Resto/restaurant"}>
       <TextWrapper>
         <Title>{name}</Title>
         <Paragraph>{city} {price}</Paragraph>

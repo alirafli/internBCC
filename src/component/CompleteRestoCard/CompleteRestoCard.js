@@ -20,22 +20,22 @@ const CompleteRestoCard = ({
   background,
 }) => {
   return (
-    <Container>
-      <RestoProfile background={background}/>
-      <ContentWrapper>
-        <Title>{name}</Title>
-        <TextWrapper>@ @ @ {review} ulasan</TextWrapper>
-        <TextWrapper underline>
-          {city} <Dots> . </Dots> $$$$
-        </TextWrapper>
-        <TextWrapper>
-          <Icon gps />
-          {address}
-        </TextWrapper>
-        <TextWrapper>
-          <Icon clock /> 08:00 WIB - 21:00 WIB
-        </TextWrapper>
-      </ContentWrapper>
+    <Container to={"/Resto/restaurant"}>
+        <RestoProfile background={background} />
+        <ContentWrapper>
+          <Title>{name}</Title>
+          <TextWrapper>@ @ @ {review} ulasan</TextWrapper>
+          <TextWrapper underline>
+            {city} <Dots> . </Dots> $$$$
+          </TextWrapper>
+          <TextWrapper>
+            <Icon gps />
+            {address}
+          </TextWrapper>
+          <TextWrapper>
+            <Icon clock /> 08:00 WIB - 21:00 WIB
+          </TextWrapper>
+        </ContentWrapper>
     </Container>
   );
 };

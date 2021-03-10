@@ -1,14 +1,21 @@
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Gps from "../../media/img/gps.svg";
 import Clock from "../../media/img/clock.svg";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
+  text-decoration: none;
+  color: #222222;
   display: flex;
   margin: ${(props) => (props.top === 1 ? `0` : `3rem`)} 0 3rem 0;
   flex-direction: row;
+  cursor: pointer;
+  transition: 300ms;
   @media only screen and (max-width: 529px) {
     flex-direction: column;
+  }
+  &:hover {
+    margin-left: 1rem;
   }
 `;
 
@@ -58,3 +65,5 @@ export const Icon = styled.div`
 export const Dots = styled.span`
   margin: 0 1rem;
 `;
+
+export const RestoLink = styled(Link)``;

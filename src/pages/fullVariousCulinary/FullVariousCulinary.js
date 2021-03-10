@@ -12,6 +12,7 @@ import CompleteResto from "../../component/completeResto/CompleteResto";
 import Restaurant from "../../api/forUserLogin";
 import { withRouter } from "react-router-dom";
 import DefaultBanner from "../../media/img/defaultBanner.png";
+import Footer from "../../component/footer/Footer";
 
 const FullVariousCulinary = (props) => {
   const [restoByCat, getRestoByCat] = useState([]);
@@ -51,10 +52,11 @@ const FullVariousCulinary = (props) => {
           </JumboTron>
         )}
         <Wrapper>
-          <PriceAndRating foodCat={false}/>
+          <PriceAndRating foodCat={false} />
           <CompleteResto />
         </Wrapper>
       </Container>
+      <Footer />
     </>
   );
 };

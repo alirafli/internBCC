@@ -15,7 +15,7 @@ const CompleteResto = (props) => {
       const res = await Restaurant.get("/restocat/" + restoId);
       getRestoAll(res.data.data.restaurants);
       setLoading(false);
-      console.log(res.data.data.restaurants);
+      // console.log(res.data.data.restaurants);
     };
     fetchRestoAll();
   }, [restoId]);

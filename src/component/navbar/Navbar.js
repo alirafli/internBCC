@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import {
   NavWrapper,
   NavContainer,
@@ -18,7 +18,7 @@ import RestoLogo from "../../media/img/restologyLogo.svg";
 const Navbar = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
   const [showModalReg, setShowModalReg] = useState(false);
-  // const [UserName, setUserName] = useState("");
+  // const [UserName, setUserName] = useState([]);
 
   const openModal = () => {
     setShowModal((prev) => !prev);

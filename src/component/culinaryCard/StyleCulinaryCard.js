@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+export const Container = styled(Link)`
+  text-decoration: none;
+  color: #222222;
   max-width: 28.5rem;
   height: 23rem;
   background-image: url(${(props) => props.image});
@@ -13,6 +16,10 @@ export const Container = styled.div`
   align-items: stretch;
   flex-direction: column;
   justify-content: flex-end;
+  transition: 300ms;
+  &:hover {
+    height: 20rem;
+  }
 `;
 
 export const TextWrapper = styled.div`
