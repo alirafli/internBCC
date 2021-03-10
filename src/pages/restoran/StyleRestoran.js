@@ -82,33 +82,9 @@ export const Photo4 = styled.div`
   border-radius: 1rem;
 `;
 
-export const MenuAndReserve = styled.div`
-  margin-top: 3rem;
-  display: grid;
-  grid-template-areas: "menuResto menuResto menuResto pemesanan";
-`;
-
-export const MenuResto = styled.div`
-  grid-area: menuResto;
-  margin: 1rem;
-  box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.15);
-  background: #f9f9f9;
-  padding: 3rem;
-`;
-
-export const Pemesanan = styled.div`
-  grid-area: pemesanan;
-  margin: 1rem;
-  box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.15);
-  background: #f9f9f9;
-  padding: 2rem;
-`;
-
 export const Ulasan = styled.div`
   box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.15);
   background: #f9f9f9;
   display: grid;
   grid-template-areas: "comment comment kosong";
 `;
-
-export const DatePick = styled.input``;
