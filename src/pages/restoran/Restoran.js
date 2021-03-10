@@ -27,6 +27,7 @@ import {
 } from "./StyleRestoran";
 import Restaurant from "../../api/forUserLogin";
 import Footer from "../../component/footer/Footer";
+import RestoDetailCom from "../../component/restoDetailCom/RestoDetailCom";
 
 const Restoran = () => {
   const [restoDetail, getRestoDetail] = useState([]);
@@ -58,38 +59,7 @@ const Restoran = () => {
               <Photo3 background={image[3].image} />
               <Photo4 background={image[0].image} />
             </Gallery>
-            <Information>
-              <Detail>
-                <DetailUp>
-                  <TitleOne>Kontrak Restoran</TitleOne>
-                  <ParagraphOne>08:00 WIB - 12:00 WIB</ParagraphOne>
-                  <ParagraphOne>021-14045</ParagraphOne>
-                  <ParagraphOne>kopisam@gmail.com</ParagraphOne>
-                  <ParagraphOne>kopisam.com</ParagraphOne>
-                </DetailUp>
-                <DetailDown>
-                  <TitleOne>Tentang Restoran</TitleOne>
-                  <ParagraphOne>Protokol COVID-19</ParagraphOne>
-                  <ParagraphOne>Indoor</ParagraphOne>
-                  <ParagraphOne>Outdoor</ParagraphOne>
-                </DetailDown>
-                <DetailMaps>
-                  <Maps />
-                  <TitleOne space>Tentang Restoran</TitleOne>
-                  <div>
-                    <Salin>Salin</Salin> <Salin>Peta</Salin>
-                  </div>
-                </DetailMaps>
-              </Detail>
-              <Score>
-                <TitleOne>Penilaian & ulasan</TitleOne>
-                <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
-                <TitleOne>Kategori</TitleOne>
-                <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
-                <TitleOne>Koleksi</TitleOne>
-                <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
-              </Score>
-            </Information>
+            <RestoDetailCom />
             <MenuAndReserve>
               <MenuResto>
                 <TitleOne>Menu</TitleOne>
@@ -136,12 +106,18 @@ const Restoran = () => {
               </MenuResto>
               <Pemesanan>
                 <TitleOne>Reservasi Meja</TitleOne>
-                <ParagraphOne style={{margin: "1.5rem 0"}}>Tersedia 20 kursi</ParagraphOne>
+                <ParagraphOne style={{ margin: "1.5rem 0" }}>
+                  Tersedia 20 kursi
+                </ParagraphOne>
                 <DatePick type="date" name="dateofbirth" id="dateofbirth" />
-                <div style={{display: "flex", justifyContent:"space-between"}}>
-                  <div style={{margin: "1.5rem 0"}}><TitleOne>Waktu Reservasi</TitleOne>
+                <div
+                  style={{ display: "flex", justifyContent: "space-between" }}
+                >
+                  <div style={{ margin: "1.5rem 0" }}>
+                    <TitleOne>Waktu Reservasi</TitleOne>
                   </div>
-                  <div style={{margin: "1.5rem 0"}}><TitleOne>Jumlah Orang</TitleOne>
+                  <div style={{ margin: "1.5rem 0" }}>
+                    <TitleOne>Jumlah Orang</TitleOne>
                   </div>
                 </div>
               </Pemesanan>

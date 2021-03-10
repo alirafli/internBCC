@@ -29,9 +29,9 @@ const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
       email: Email,
       password: Password,
     });
-    res.status === 200 && setAuthTokens(res.data.token);
+    res.status === 200 && setAuthTokens(res.data.data.token);
     // setLoggedIn(true);
-    // console.log(res);
+    console.log(res);
   };
 
   // if (isLoggedIn) {
