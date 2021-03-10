@@ -26,23 +26,19 @@ const RegisterPage = ({ showModalReg, setShowModalReg, setShowModal }) => {
   // const [isLoggedIn, setLoggedIn] = useState(false);
   const [check, setCheck] = useState(false);
 
-  const toggleChecked = () => setCheck(value => !value);
+  const toggleChecked = () => setCheck((value) => !value);
 
   const handleUserSignup = async (e) => {
     e.preventDefault();
-    await forUserLogin.post("/user/register", {
-      name: Name,
-      phone: Phone,
-      email: Email,
-      password: Password,
-    });
     await forUserLogin
-      .post("user/login", {
+      .post("/user/register", {
+        name: Name,
+        phone: Phone,
         email: Email,
         password: Password,
       })
       .then((res) => {
-        res.status === 200 && setAuthTokens(res.data.token);
+        res.status === 201 && setAuthTokens(res.data.data.token);
         // setLoggedIn(true);
       });
   };

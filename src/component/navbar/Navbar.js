@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import {
   NavWrapper,
   NavContainer,
@@ -13,12 +13,13 @@ import LoginPage from "../loginPage/LoginPage";
 import RegisterPage from "../registerPage/RegisterPage";
 import { useAuth } from "../../config/Auth";
 import RestoLogo from "../../media/img/restologyLogo.svg";
-// import forUserLogin from "../../api/forUserLogin";
+import forUserLogin from "../../api/forUserLogin";
 
 const Navbar = ({ isLoggedIn }) => {
   const [showModal, setShowModal] = useState(false);
   const [showModalReg, setShowModalReg] = useState(false);
-  // const [UserName, setUserName] = useState([]);
+  const [userData, getUserData] = useState([]);
+  const { authTokens } = useAuth();
 
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -27,7 +28,6 @@ const Navbar = ({ isLoggedIn }) => {
   const openModalReg = () => {
     setShowModalReg((prev) => !prev);
   };
-
   const { setAuthTokens } = useAuth();
 
   const Logout = () => {
@@ -35,17 +35,21 @@ const Navbar = ({ isLoggedIn }) => {
     localStorage.clear();
   };
 
-  // const count = 2;
+  const fetchUserData = () => {
+    forUserLogin
+      .get(
+        "/user/profile",
+        { headers: { Authorization: `Bearer ${authTokens}` } }
+      )
+      .then((res) => {
+        getUserData(res.data.data)
+        // console.log(res.data.data)
+      });
+  };
 
-  // const fetchUserName = async () => {
-  //   const res = await forUserLogin.get(`/user/${count}`);
-  //   setUserName(res.data);
-  //   console.log(res.data);
-  // };
-
-  // useEffect(() => {
-  //   fetchUserName();
-  // }, []);
+  useEffect(() => {
+    fetchUserData()
+  },[authTokens])
 
   return (
     <NavWrapper>
@@ -55,7 +59,7 @@ const Navbar = ({ isLoggedIn }) => {
         </LogoWrapper>
         {isLoggedIn ? (
           <ButtonContainer>
-            <NavItem to="#">Berhasil Login</NavItem>
+            <NavItem to="#">{userData.name}</NavItem>
             <NavItem style={SignupStyle} onClick={Logout} to="/">
               Sign Out
             </NavItem>
