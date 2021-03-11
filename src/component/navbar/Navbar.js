@@ -35,21 +35,19 @@ const Navbar = ({ isLoggedIn }) => {
     localStorage.clear();
   };
 
-  const fetchUserData = () => {
-    forUserLogin
-      .get(
-        "/user/profile",
-        { headers: { Authorization: `Bearer ${authTokens}` } }
-      )
-      .then((res) => {
-        getUserData(res.data.data)
-        // console.log(res.data.data)
-      });
-  };
-
   useEffect(() => {
-    fetchUserData()
-  },[authTokens])
+    const fetchUserData = () => {
+      forUserLogin
+        .get("/user/profile", {
+          headers: { Authorization: `Bearer ${authTokens}` },
+        })
+        .then((res) => {
+          getUserData(res.data.data);
+          // console.log(res.data.data)
+        });
+    };
+    fetchUserData();
+  }, [authTokens]);
 
   return (
     <NavWrapper>

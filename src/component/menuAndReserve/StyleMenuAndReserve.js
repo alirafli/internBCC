@@ -1,5 +1,6 @@
 import styled from "styled-components";
 // import { Link } from "react-router-dom";
+import { TextField } from "@material-ui/core";
 
 export const TitleOne = styled.h1`
   font-family: Montserrat;
@@ -7,7 +8,8 @@ export const TitleOne = styled.h1`
   font-weight: 600;
   font-size: 2.4rem;
   line-height: 2.9rem;
-  ${(props) => (props.space ? "margin: 2.3rem" : null)};
+  margin: ${(props) =>
+    props.space ? "2.3rem" : props.bottom ? ".7rem" : null};
 `;
 
 export const ParagraphOne = styled.p`
@@ -49,6 +51,9 @@ export const DatePick = styled.input`
   width: 100%;
   margin-top: 3rem;
   padding: 0.6rem;
+  border-style: solid;
+  border-color: #222222;
+  border-radius: 1rem;
 `;
 
 export const MenuContainer = styled.div`
@@ -64,7 +69,17 @@ export const TitleWrapper = styled.div`
   margin: 5rem 0;
 `;
 
-export const LocateWrapper = styled.div``;
+export const LocateWrapper = styled.div`
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  border-style: solid;
+  border-color: #222222;
+  border-radius: 1rem;
+`;
+
 export const Select = styled.select`
   width: 10em;
   border: 0;
@@ -80,4 +95,47 @@ export const Select = styled.select`
 export const Option = styled.option`
   color: #222222;
   border: 0;
+`;
+
+export const PilihTempatWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: 2rem;
+`;
+
+export const Input = styled(TextField).attrs(() => ({
+  variant: "outlined",
+  InputProps: { style: { fontSize: "1.8rem", fontFamily: "inherit" } },
+  InputLabelProps: { style: { fontSize: "1.5rem", fontFamily: "inherit" } },
+}))`
+  width: 100%;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+export const ButtonPesan = styled.button`
+  background-color: ${(props) => (props.extra ? "white" : "#ff7a45")};
+  color: ${(props) => (props.extra ? "#ff7a45" : "#fff")};
+  border: solid;
+  padding: 1.3rem 0;
+  width: 100%;
+  margin-top: 3rem;
+  font-style: normal;
+  font-family: Montserrat;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  transition: 0.2s all;
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) => (props.extra ? "#f4f4f4" : "#e75e27")};
+    color: ${(props) => (props.extra ? "#e75e27" : "")};
+  }
+  &:disabled {
+    background-color: #c4c4c4;
+    cursor: auto;
+  }
 `;

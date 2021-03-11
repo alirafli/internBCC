@@ -63,7 +63,7 @@ const Indicator = styled.div`
   left: -1.5em;
 
   ${Label}:hover & {
-    background: #ff7a45;
+    background: grey;
     border: 0 solid;
   }
 
