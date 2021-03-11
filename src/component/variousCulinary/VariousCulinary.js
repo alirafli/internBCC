@@ -62,6 +62,7 @@ const VariousCulinary = () => {
                 <CulinaryCard
                   name={props.name}
                   key={props.id}
+                  id = {props.id}
                   review={props.review}
                   image={props.restoimgs[0].image}
                   city={props.city}

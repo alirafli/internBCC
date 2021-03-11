@@ -39,8 +39,8 @@ const Ulasan = () => {
       </Content>
 
       <CommentWrapper>
-      <Input
-          placeholder="Tulis catatan tambahan disini"
+        <Input
+          placeholder="Ketik ulasanmu tentang restoran disini"
           type="text"
           multiline
           rows={2}

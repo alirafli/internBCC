@@ -88,3 +88,7 @@ export const Salin = styled.button`
   margin: 2rem 1.3rem;
   cursor: pointer;
 `;
+
+export const Bold = styled.span`
+  font-weight: bold;
+`;

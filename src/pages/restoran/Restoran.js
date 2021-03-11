@@ -16,23 +16,35 @@ import Footer from "../../component/footer/Footer";
 import RestoDetailCom from "../../component/restoDetailCom/RestoDetailCom";
 import MenuAndReserve from "../../component/menuAndReserve/MenuAndReserve";
 import UlasanAll from "../../component/ulasan/Ulasan";
+import { withRouter } from "react-router-dom";
 
-const Restoran = () => {
+const Restoran = (props) => {
   const [restoDetail, getRestoDetail] = useState([]);
-  const [image, setImage] = useState(["", "", "", "", ""]);
+  const [image, setImage] = useState([
+    { image: "a" },
+    { image: "a" },
+    { image: "a" },
+    { image: "a" },
+    { image: "" },
+  ]);
   const [loading, setLoading] = useState(false);
+
+  const restoId = props.match.params.id;
 
   useEffect(() => {
     const fetchRestoDetail = async () => {
       setLoading(true);
-      const res = await Restaurant.get("/restaurants/2");
+      const res = await Restaurant.get(`/restaurants/${restoId}`);
       getRestoDetail(res.data.data);
-      setImage(res.data.data.restoimgs);
+      if (res.data.data.restoimgs.length == 0) {
+      } else {
+        setImage(res.data.data.restoimgs);
+      }
       setLoading(false);
-      // console.log(res.data.data.restoimgs[0]);
+      console.log(res.data.data);
     };
     fetchRestoDetail();
-  }, []);
+  }, [restoId]);
   return (
     <>
       <NavbarBackground />
@@ -41,13 +53,17 @@ const Restoran = () => {
           <Container>
             <Title>{restoDetail.name}</Title>
             <Gallery>
-              <Banner background={image[0].image} />
+              <Banner background={image[4].image} />
               <Photo1 background={image[1].image} />
               <Photo2 background={image[2].image} />
               <Photo3 background={image[3].image} />
               <Photo4 background={image[0].image} />
             </Gallery>
-            <RestoDetailCom />
+            <RestoDetailCom
+              alamat={restoDetail.address}
+              rate={restoDetail.rate}
+              ulasan={restoDetail.review}
+            />
             <MenuAndReserve />
             <UlasanAll />
           </Container>
@@ -58,4 +74,4 @@ const Restoran = () => {
   );
 };
 
-export default Restoran;
+export default withRouter(Restoran);

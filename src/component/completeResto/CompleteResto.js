@@ -28,7 +28,7 @@ const CompleteResto = (props) => {
         : restoAll.map((resto) => (
             <CompleteRestoCard
               background={resto.restoimgs[0].image}
-              key={resto.id}
+              id={resto.id}
               RestoId={resto.CatRestocat.restaurantId}
               name={resto.name}
               address={resto.address}

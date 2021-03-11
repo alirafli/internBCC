@@ -10,9 +10,10 @@ import {
   Maps,
   Salin,
   Score,
+  Bold,
 } from "./StyleRestoDetailCom";
 
-const restoDetailCom = () => {
+const restoDetailCom = ({alamat, rate, ulasan}) => {
   return (
     <Information>
       <Detail>
@@ -24,14 +25,14 @@ const restoDetailCom = () => {
           <ParagraphOne>kopisam.com</ParagraphOne>
         </DetailUp>
         <DetailDown>
-          <TitleOne>Tentang Restoran</TitleOne>
+          <ParagraphOne>Tentang Restoran</ParagraphOne>
           <ParagraphOne>Protokol COVID-19</ParagraphOne>
           <ParagraphOne>Indoor</ParagraphOne>
           <ParagraphOne>Outdoor</ParagraphOne>
         </DetailDown>
         <DetailMaps>
           <Maps />
-          <TitleOne space>Tentang Restoran</TitleOne>
+          <ParagraphOne space>{alamat}</ParagraphOne>
           <div>
             <Salin>Salin</Salin> <Salin>Peta</Salin>
           </div>
@@ -39,6 +40,7 @@ const restoDetailCom = () => {
       </Detail>
       <Score>
         <TitleOne>Penilaian & ulasan</TitleOne>
+        <ParagraphOne><Bold>{rate}.0</Bold>, {ulasan} ulasan</ParagraphOne>
         <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
         <TitleOne>Kategori</TitleOne>
         <ParagraphOne>Kopi, Cepat saji</ParagraphOne>

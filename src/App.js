@@ -29,7 +29,7 @@ function App() {
             <Route path="/PlaceCategory" component={FullPlaceCollection} />
             <Route path="/VariousCulinary/:id" component={FullVariousCulinary} />
             <Route path="/Resto/all" component={AnekaKuliner} />
-            <Route path="/Resto/restaurant" component={Restoran} />
+            <Route path="/Resto/restaurant/:id" component={Restoran} />
             <Route path="/" component={Home} />
           </Switch>
         </Router>

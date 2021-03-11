@@ -18,9 +18,10 @@ const CompleteRestoCard = ({
   restoId,
   city,
   background,
+  id,
 }) => {
   return (
-    <Container to={"/Resto/restaurant"}>
+    <Container to={"/Resto/restaurant/" + id}>
         <RestoProfile background={background} />
         <ContentWrapper>
           <Title>{name}</Title>

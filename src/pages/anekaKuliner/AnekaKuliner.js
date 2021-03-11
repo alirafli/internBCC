@@ -36,6 +36,7 @@ const AnekaKuliner = () => {
                   <CompleteRestoCard
                     background={props.restoimgs[0].image}
                     name={props.name}
+                    id={props.id}
                     key={props.id}
                     review={props.review}
                     image={props.restoimgs[0].image}
