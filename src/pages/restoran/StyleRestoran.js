@@ -82,9 +82,4 @@ export const Photo4 = styled.div`
   border-radius: 1rem;
 `;
 
-export const Ulasan = styled.div`
-  box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.15);
-  background: #f9f9f9;
-  display: grid;
-  grid-template-areas: "comment comment kosong";
-`;
+

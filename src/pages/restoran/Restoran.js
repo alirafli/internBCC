@@ -4,17 +4,18 @@ import {
   Container,
   Title,
   Gallery,
-  Ulasan,
   Banner,
   Photo1,
   Photo2,
   Photo3,
   Photo4,
+  MenuNext,
 } from "./StyleRestoran";
 import Restaurant from "../../api/forUserLogin";
 import Footer from "../../component/footer/Footer";
 import RestoDetailCom from "../../component/restoDetailCom/RestoDetailCom";
 import MenuAndReserve from "../../component/menuAndReserve/MenuAndReserve";
+import UlasanAll from "../../component/ulasan/Ulasan";
 
 const Restoran = () => {
   const [restoDetail, getRestoDetail] = useState([]);
@@ -48,7 +49,7 @@ const Restoran = () => {
             </Gallery>
             <RestoDetailCom />
             <MenuAndReserve />
-            <Ulasan></Ulasan>
+            <UlasanAll />
           </Container>
           <Footer />
         </>

@@ -28,7 +28,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-areas:
     "menuResto menuResto menuResto pemesanan"
-    "null null null pemesanan";
+    "tombolMenu tombolMenu tombolMenu pemesanan";
 `;
 
 export const MenuResto = styled.div`

@@ -135,11 +135,17 @@ const MenuAndReserve = () => {
         <Input
           placeholder="Tulis catatan tambahan disini"
           type="text"
+          multiline
+          rows={3}
           onChange={(e) => setComment(e.target.value)}
         />
         <ButtonWrapper>
-          <ButtonPesan extra type="submit">Pesan menu minuman & makanan</ButtonPesan>
-          <ButtonPesan type="submit">Reservasi tanpa pemesanan menu</ButtonPesan>
+          <ButtonPesan extra type="submit">
+            Pesan menu minuman & makanan
+          </ButtonPesan>
+          <ButtonPesan type="submit">
+            Reservasi tanpa pemesanan menu
+          </ButtonPesan>
         </ButtonWrapper>
       </Pemesanan>
     </Container>
