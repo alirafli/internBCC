@@ -8,6 +8,7 @@ import {
   LoginStyle,
   SignupStyle,
   ButtonContainer,
+  ProfileIcon,
 } from "./StyleNavbar";
 import LoginPage from "../loginPage/LoginPage";
 import RegisterPage from "../registerPage/RegisterPage";
@@ -28,12 +29,6 @@ const Navbar = ({ isLoggedIn }) => {
   const openModalReg = () => {
     setShowModalReg((prev) => !prev);
   };
-  const { setAuthTokens } = useAuth();
-
-  const Logout = () => {
-    setAuthTokens();
-    localStorage.clear();
-  };
 
   useEffect(() => {
     const fetchUserData = () => {
@@ -43,7 +38,7 @@ const Navbar = ({ isLoggedIn }) => {
         })
         .then((res) => {
           getUserData(res.data.data);
-          // console.log(res.data.data)
+          // console.log(res.data.data);
         });
     };
     authTokens && fetchUserData();
@@ -57,10 +52,8 @@ const Navbar = ({ isLoggedIn }) => {
         </LogoWrapper>
         {isLoggedIn ? (
           <ButtonContainer>
-            <NavItem to="#">{userData.name}</NavItem>
-            <NavItem style={SignupStyle} onClick={Logout} to="/">
-              Sign Out
-            </NavItem>
+            <NavItem to="/user-profile">{userData.name}</NavItem>
+            <ProfileIcon to="/user-profile" background={userData.image} />
           </ButtonContainer>
         ) : (
           <ButtonContainer>

@@ -40,7 +40,7 @@ const Ulasan = () => {
 
       <CommentWrapper>
         <Input
-          placeholder="Ketik ulasanmu tentang restoran disini"
+          placeholder="Ketik ulasanmu tentang restoran di sini"
           type="text"
           multiline
           rows={2}

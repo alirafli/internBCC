@@ -41,10 +41,10 @@ const Restoran = (props) => {
         setImage(res.data.data.restoimgs);
       }
       setLoading(false);
-      console.log(res.data.data);
+      // console.log(res.data.data);
     };
     fetchRestoDetail();
-  }, [restoId]);
+  }, []);
   return (
     <>
       <NavbarBackground />
@@ -64,7 +64,10 @@ const Restoran = (props) => {
               rate={restoDetail.rate}
               ulasan={restoDetail.review}
             />
-            <MenuAndReserve />
+            <MenuAndReserve
+              seat={restoDetail.number_of_seat}
+              OurRestoId={restoId}
+            />
             <UlasanAll />
           </Container>
           <Footer />

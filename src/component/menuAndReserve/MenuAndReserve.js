@@ -19,16 +19,19 @@ import {
 } from "./StyleMenuAndReserve";
 import Restaurant from "../../api/forUserLogin";
 import RadioButton from "../priceChoice/StylePriceChoice";
+import { useAuth } from "../../config/Auth";
 
-const MenuAndReserve = () => {
+const MenuAndReserve = ({ seat, OurRestoId }) => {
   const [food, getFood] = useState([]);
   const [drink, getDrink] = useState([]);
   const [date, getDate] = useState("");
   const [timeReserv, getTimeReserv] = useState("");
-  const [people, getPeople] = useState("");
+  const [people, getPeople] = useState();
   const [comment, setComment] = useState("");
+  const [inOut, setInOut] = useState("");
 
-  const restoId = 2;
+  const restoId = OurRestoId;
+  const { authTokens } = useAuth();
   useEffect(() => {
     const fetchFood = async () => {
       const res = await Restaurant.get(`/food/foods/${restoId}`);
@@ -42,8 +45,32 @@ const MenuAndReserve = () => {
     };
     fetchFood();
     fetchDrink();
-  }, []);
+  }, [restoId]);
 
+  let count = 0;
+
+  const SendReservation = () => {
+    Restaurant.post(
+      "/booking/create",
+      {
+        restaurantId: restoId,
+        number_of_seat: people,
+        datetime: date,
+        time: timeReserv,
+        place: inOut,
+        content: comment,
+      },
+      { headers: { Authorization: `Bearer ${authTokens}` } }
+    ).then((res) => {
+      if (count < 0) {
+        SendReservation();
+        setComment("");
+        console.log(res);
+        count++;
+      }
+      console.log("selesai");
+    });
+  };
   return (
     <Container>
       <MenuResto>
@@ -67,7 +94,7 @@ const MenuAndReserve = () => {
       <Pemesanan>
         <TitleOne>Reservasi Meja</TitleOne>
 
-        <ParagraphOne>Tersedia 20 kursi</ParagraphOne>
+        <ParagraphOne>Tersedia {seat} kursi</ParagraphOne>
         <DatePick
           type="date"
           name="dateofbirth"
@@ -85,9 +112,11 @@ const MenuAndReserve = () => {
                   getTimeReserv(e.target.value);
                 }}
               >
-                <Option value="13.00">13.00</Option>
-                <Option value="14.00">14.00</Option>
-                <Option value="15.00">15.00</Option>
+                <Option value="08 : 00">08 : 00</Option>
+                <Option value="09 : 00">09 : 00</Option>
+                <Option value="10 : 00">10 : 00</Option>
+                <Option value="11 : 00">11 : 00</Option>
+                <Option value="12 : 00">12 : 00</Option>
               </Select>
             </LocateWrapper>
           </TitleWrapper>
@@ -115,7 +144,7 @@ const MenuAndReserve = () => {
               name="radio"
               value={"indoor"}
               onChange={(e) => {
-                getPeople(e.target.value);
+                setInOut(e.target.value);
               }}
             />
           </div>
@@ -126,14 +155,14 @@ const MenuAndReserve = () => {
               name="radio"
               value={"outdoor"}
               onChange={(e) => {
-                getPeople(e.target.value);
+                setInOut(e.target.value);
               }}
             />
           </div>
         </PilihTempatWrap>
         <TitleOne bottom>Catatan Tambahan</TitleOne>
         <Input
-          placeholder="Tulis catatan tambahan disini"
+          placeholder="Tulis catatan tambahan di sini"
           type="text"
           multiline
           rows={3}
@@ -143,7 +172,7 @@ const MenuAndReserve = () => {
           <ButtonPesan extra type="submit">
             Pesan menu minuman & makanan
           </ButtonPesan>
-          <ButtonPesan type="submit">
+          <ButtonPesan type="submit" onClick={SendReservation}>
             Reservasi tanpa pemesanan menu
           </ButtonPesan>
         </ButtonWrapper>

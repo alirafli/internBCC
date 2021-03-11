@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+// import UserIcon from "../../media/img/userProfile.svg"
 
 export const NavWrapper = styled.nav`
   position: absolute;
@@ -29,7 +30,8 @@ export const NavItem = styled(Link)`
   transition: all 0.2s;
   color: #f1f1f1;
   border-radius: 1rem;
-  padding: 1rem 2.5rem;
+  ${((props) => props.logout ? "margin-left: 1rem" : null)};
+  padding:${((props) => props.logout ?"1rem 1rem" : "1rem 1.3rem")};
   &:not(:last-child) {
     margin-right: 2.9rem;
   }
@@ -79,6 +81,7 @@ export const NavbarBackground = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
+display: flex;
   @media only screen and (max-width: 540px) {
     margin-left: -5rem;
   }
@@ -86,3 +89,12 @@ export const ButtonContainer = styled.div`
     margin-left: -15rem;
   }
 `;
+
+export const ProfileIcon = styled(Link)`
+  background-image: url(${((props) => props.background)});
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+  background-position: center;
+  background-size: cover;
+`

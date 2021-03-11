@@ -27,8 +27,7 @@ export const Container = styled.div`
   margin-top: 3rem;
   display: grid;
   grid-template-areas:
-    "menuResto menuResto menuResto pemesanan"
-    "tombolMenu tombolMenu tombolMenu pemesanan";
+    "menuResto menuResto menuResto pemesanan";
   @media only screen and (max-width: 808px) {
     grid-template-areas:
       "menuResto"
@@ -63,6 +62,7 @@ export const DatePick = styled.input`
   border-style: solid;
   border-color: #222222;
   border-radius: 1rem;
+  outline: none;
 `;
 
 export const MenuContainer = styled.div`
@@ -93,6 +93,7 @@ export const Select = styled.select`
   width: 10em;
   border: 0;
   cursor: pointer;
+  outline: none;
 
   font-family: Montserrat;
   font-style: normal;

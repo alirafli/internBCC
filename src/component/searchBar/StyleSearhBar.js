@@ -71,6 +71,8 @@ export const SearchWrapper = styled.input`
   height: 5.5rem;
   padding: 0.5em;
   color: #222222;
+  outline: none;
+  border: none;
 
   font-family: Montserrat;
   font-style: normal;
@@ -95,6 +97,8 @@ export const Select = styled.select`
   width: 10em;
   border: 0;
   cursor: pointer;
+  outline: none;
+  border: none;
 
   font-family: Montserrat;
   font-style: normal;
