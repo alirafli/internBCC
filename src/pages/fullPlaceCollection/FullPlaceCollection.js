@@ -13,7 +13,7 @@ const FullPlaceCollection = () => {
   return (
     <>
       <NavbarBackground />
-      <Container>
+      <Container data-aos-once="true" data-aos="fade-up">
         <Title>
           Koleksi di <Bold>Jakarta</Bold>
         </Title>

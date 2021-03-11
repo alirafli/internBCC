@@ -50,7 +50,7 @@ const Restoran = (props) => {
       <NavbarBackground />
       {loading ? null : (
         <>
-          <Container>
+          <Container data-aos-once="true" data-aos="fade-up">
             <Title>{restoDetail.name}</Title>
             <Gallery>
               <Banner background={image[4].image} />

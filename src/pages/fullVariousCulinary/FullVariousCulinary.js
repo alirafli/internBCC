@@ -37,7 +37,7 @@ const FullVariousCulinary = (props) => {
   return (
     <>
       <NavbarBackground />
-      <Container>
+      <Container data-aos-once="true" data-aos="fade-up">
         {Loading ? (
           <JumboTron background={DefaultBanner}>
             <Title>Kopi</Title>

@@ -28,7 +28,7 @@ const StyleGridPlaceCollection = ({ page }) => {
   return (
     <>
       {page === "home" ? (
-        <Container>
+        <Container data-aos-once="true" data-aos="fade-up">
           <Grid container justify="space-between">
             {restoCat.map((resto) => (
               <Grid item xs={matches ? 3 : 6} key={resto.id}>
@@ -43,7 +43,7 @@ const StyleGridPlaceCollection = ({ page }) => {
           </Grid>
         </Container>
       ) : (
-        <Container>
+        <Container data-aos-once="true" data-aos="fade-up">
           <Grid container justify="space-between">
             {restoCat.map((resto) => (
               <Grid item xs={matches ? 3 : 6} key={resto.id}>
