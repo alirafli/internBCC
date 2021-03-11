@@ -46,7 +46,7 @@ const Navbar = ({ isLoggedIn }) => {
           // console.log(res.data.data)
         });
     };
-    fetchUserData();
+    authTokens && fetchUserData();
   }, [authTokens]);
 
   return (
