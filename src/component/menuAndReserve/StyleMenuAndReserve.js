@@ -29,6 +29,15 @@ export const Container = styled.div`
   grid-template-areas:
     "menuResto menuResto menuResto pemesanan"
     "tombolMenu tombolMenu tombolMenu pemesanan";
+  @media only screen and (max-width: 808px) {
+    grid-template-areas:
+      "menuResto"
+      "pemesanan";
+    margin-top: 20rem;
+  }
+  @media only screen and (max-width: 451px) {
+    margin-top: 30rem;
+  }
 `;
 
 export const MenuResto = styled.div`

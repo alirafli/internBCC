@@ -40,6 +40,11 @@ export const Gallery = styled.div`
   grid-gap: 1.7rem;
   height: 40rem;
   margin-top: 3rem;
+  @media only screen and (max-width:808px){
+    grid-template-areas:
+    "banner banner banner banner"
+    "photo1 photo2 photo3 photo4";
+} 
 `;
 
 export const Banner = styled.div`

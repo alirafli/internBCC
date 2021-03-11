@@ -26,6 +26,11 @@ export const Information = styled.div`
   grid-gap: 1.7rem;
   height: 40rem;
   margin-top: 6rem;
+  @media only screen and (max-width: 808px) {
+    grid-template-areas:
+      "detail"
+      "score";
+  }
 `;
 
 export const Detail = styled.div`
@@ -61,6 +66,10 @@ export const Maps = styled.div`
   width: 24.7rem;
   height: 17rem;
   background: red;
+  @media only screen and (max-width: 497px) {
+    width: 15rem;
+    height: 10rem;
+  }
 `;
 
 export const Score = styled.div`
