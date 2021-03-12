@@ -14,6 +14,7 @@ import {
 } from "./StyleAccountForm";
 import forUserLogin from "../../api/forUserLogin";
 import { useAuth } from "../../config/Auth";
+import swal from "sweetalert";
 // import { Redirect } from "react-router-dom";
 // import Navbar from "../navbar/Navbar";
 
@@ -29,9 +30,13 @@ const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
       email: Email,
       password: Password,
     });
-    res.status === 200 && setAuthTokens(res.data.data.token);
+    if (res.status === 200) {
+      setAuthTokens(res.data.data.token);
+      swal("Berhasil Login!")
+    }
+    // res.status === 200 && setAuthTokens(res.data.data.token);
     // setLoggedIn(true);
-    // console.log(res);
+    console.log(res);
   };
 
   // if (isLoggedIn) {

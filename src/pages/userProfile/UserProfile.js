@@ -102,12 +102,13 @@ const UserProfile = () => {
           {reservation.map((props) => (
             <ReservationProofCard
               content={props.content}
-              key={props.restaurantId}
+              key={props.id}
               seat={props.number_of_seat}
               place={props.place}
               date={props.datetime}
               time={props.time}
               restoranId={props.restaurantId}
+              bookingId={props.id}
             />
           ))}
           <Title borders id="syarat">

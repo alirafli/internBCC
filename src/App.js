@@ -10,6 +10,7 @@ import FullVariousCulinary from "./pages/fullVariousCulinary/FullVariousCulinary
 import AnekaKuliner from "./pages/anekaKuliner/AnekaKuliner"
 import Restoran from "./pages/restoran/Restoran"
 import UserProfile from "./pages/userProfile/UserProfile"
+import ReservationFood from "./pages/reservationFood/ReservationFood"
 
 function App() {
   const existingToken = JSON.parse(localStorage.getItem("tokens"));
@@ -31,6 +32,7 @@ function App() {
             <Route path="/VariousCulinary/:id" component={FullVariousCulinary} />
             <Route path="/Resto/all" component={AnekaKuliner} />
             <Route path="/Resto/restaurant/:id" component={Restoran} />
+            <Route path="/foodReserv" component={ReservationFood} />
             <PrivateRoute path="/user-profile" component={UserProfile} /> 
             <Route path="/" component={Home} />
           </Switch>

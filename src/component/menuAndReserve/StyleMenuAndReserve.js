@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TextField } from "@material-ui/core";
 
 export const TitleOne = styled.h1`
@@ -127,9 +127,9 @@ export const ButtonWrapper = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-export const ButtonPesan = styled.button`
-  background-color: ${(props) => (props.extra ? "white" : "#ff7a45")};
-  color: ${(props) => (props.extra ? "#ff7a45" : "#fff")};
+export const ButtonPesan = styled(Link)`
+  background-color: ${(props) => (props.extraa ? "white" : "#ff7a45")};
+  color: ${(props) => (props.extraa ? "#ff7a45" : "#fff")};
   border: solid;
   padding: 1.3rem 0;
   width: 100%;
@@ -139,10 +139,12 @@ export const ButtonPesan = styled.button`
   font-size: 1.8rem;
   border-radius: 1rem;
   transition: 0.2s all;
+  text-decoration: none;
+  text-align: center;
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => (props.extra ? "#f4f4f4" : "#e75e27")};
-    color: ${(props) => (props.extra ? "#e75e27" : "")};
+    background-color: ${(props) => (props.extraa ? "#f4f4f4" : "#e75e27")};
+    color: ${(props) => (props.extraa ? "#e75e27" : "")};
   }
   &:disabled {
     background-color: #c4c4c4;

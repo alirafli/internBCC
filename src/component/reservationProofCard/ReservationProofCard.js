@@ -8,9 +8,17 @@ import {
   Title,
   Wrapper,
 } from "./StyleReservationProofCard";
-import forUserLogin from "../../api/forUserLogin"
+import forUserLogin from "../../api/forUserLogin";
 
-const ReservationProofCard = ({ content, seat, place, date, time, restoranId }) => {
+const ReservationProofCard = ({
+  content,
+  seat,
+  place,
+  date,
+  time,
+  restoranId,
+  bookingId,
+}) => {
   const [restoDetail, getRestoDetail] = useState([]);
   const restoId = restoranId;
 
@@ -42,6 +50,9 @@ const ReservationProofCard = ({ content, seat, place, date, time, restoranId }) 
           </Paragraph>
         </Left>
         <Right>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <h2>Booking id: {bookingId}</h2>
+          </div>
           <Wrapper>
             <Title>Catatan Permintaan</Title>
             <Paragraph>- {place}</Paragraph>

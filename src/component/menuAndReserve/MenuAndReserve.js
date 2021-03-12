@@ -20,6 +20,7 @@ import {
 import Restaurant from "../../api/forUserLogin";
 import RadioButton from "../priceChoice/StylePriceChoice";
 import { useAuth } from "../../config/Auth";
+import swal from "sweetalert"
 
 const MenuAndReserve = ({ seat, OurRestoId }) => {
   const [food, getFood] = useState([]);
@@ -67,9 +68,12 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
         setComment("");
         console.log(res);
         count++;
+        
       }
       console.log("selesai");
-    });
+    }).catch(function() {
+      swal("login terlebih dahulu!")
+    })
   };
   return (
     <Container>
@@ -170,10 +174,10 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
           onChange={(e) => setComment(e.target.value)}
         />
         <ButtonWrapper>
-          <ButtonPesan extra type="submit">
+          <ButtonPesan extraa type="submit" to="#">
             Pesan menu minuman & makanan
           </ButtonPesan>
-          <ButtonPesan type="submit" onClick={SendReservation}>
+          <ButtonPesan type="submit" onClick={SendReservation} to="#">
             Reservasi tanpa pemesanan menu
           </ButtonPesan>
         </ButtonWrapper>
