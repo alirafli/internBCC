@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import GlobalStyle from "./style/GlobalStyle";
 import Navbar from "./component/navbar/Navbar";
 import Home from "./pages/home/Home";
-// import PrivateRoute from "./config/PrivateRoute";
+import PrivateRoute from "./config/PrivateRoute";
 import { AuthContext } from "./config/Auth";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FullPlaceCollection from "./pages/fullPlaceCollection/FullPlaceCollection";
@@ -31,7 +31,7 @@ function App() {
             <Route path="/VariousCulinary/:id" component={FullVariousCulinary} />
             <Route path="/Resto/all" component={AnekaKuliner} />
             <Route path="/Resto/restaurant/:id" component={Restoran} />
-            <Route path="/user-profile" component={UserProfile} /> 
+            <PrivateRoute path="/user-profile" component={UserProfile} /> 
             <Route path="/" component={Home} />
           </Switch>
         </Router>
