@@ -16,11 +16,15 @@ import {
   Input,
   ButtonWrapper,
   ButtonPesan,
+  Button2,
 } from "./StyleMenuAndReserve";
 import Restaurant from "../../api/forUserLogin";
 import RadioButton from "../priceChoice/StylePriceChoice";
 import { useAuth } from "../../config/Auth";
-import swal from "sweetalert"
+import swal from "sweetalert";
+import ChoosePayment from "../paymentPopup/ChoosePayment";
+import PaymentConfirm from "../paymentPopup/PaymentConfirm";
+import SuccessPayment from "../paymentPopup/SuccessPayment";
 
 const MenuAndReserve = ({ seat, OurRestoId }) => {
   const [food, getFood] = useState([]);
@@ -30,6 +34,14 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
   const [people, getPeople] = useState();
   const [comment, setComment] = useState("");
   const [inOut, setInOut] = useState("");
+
+  const [payChoose, setPayChoose] = useState(false);
+  const [payConfirm, setPayConfirm] = useState(false);
+  const [payResult, setPayResult] = useState(false);
+
+  const openPayChoose = () => {
+    setPayChoose((prev) => !prev);
+  };
 
   const restoId = OurRestoId;
   const { authTokens } = useAuth();
@@ -48,33 +60,15 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
     fetchDrink();
   }, [restoId]);
 
-  let count = 0;
-
-  const SendReservation = () => {
-    Restaurant.post(
-      "/booking/create",
-      {
-        restaurantId: restoId,
-        number_of_seat: people,
-        datetime: date,
-        time: timeReserv,
-        place: inOut,
-        content: comment,
-      },
-      { headers: { Authorization: `Bearer ${authTokens}` } }
-    ).then((res) => {
-      if (count < 0) {
-        SendReservation();
-        setComment("");
-        console.log(res);
-        count++;
-        
-      }
-      console.log("selesai");
-    }).catch(function() {
-      swal("login terlebih dahulu!")
-    })
+  const LoginFirst = () => {
+    swal("login terlebih dahulu!");
   };
+
+  // if (control) {
+  //   console.log("konfirmasi");
+  //   SendReservation();
+  //   setControl(false);
+  // }
   return (
     <Container>
       <MenuResto>
@@ -174,12 +168,35 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
           onChange={(e) => setComment(e.target.value)}
         />
         <ButtonWrapper>
-          <ButtonPesan extraa type="submit" to="#">
+          <Button2 type="submit" to="#" >
             Pesan menu minuman & makanan
-          </ButtonPesan>
-          <ButtonPesan type="submit" onClick={SendReservation} to="#">
+          </Button2>
+          <ButtonPesan
+            type="submit"
+            onClick={authTokens ? openPayChoose : LoginFirst}
+            to="#"
+          >
             Reservasi tanpa pemesanan menu
           </ButtonPesan>
+          <ChoosePayment
+            payChoose={payChoose}
+            setPayChoose={setPayChoose}
+            setPayConfirm={setPayConfirm}
+          />
+          <PaymentConfirm
+            payConfirm={payConfirm}
+            setPayConfirm={setPayConfirm}
+            setPayChoose={setPayChoose}
+            setPayResult={setPayResult}
+            date={date}
+            timeReserv={timeReserv}
+            comment={comment}
+            inOut={inOut}
+            people={people}
+            restoId={restoId}
+          />
+
+          <SuccessPayment payResult={payResult} setPayResult={setPayResult} />
         </ButtonWrapper>
       </Pemesanan>
     </Container>

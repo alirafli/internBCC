@@ -36,7 +36,7 @@ const LoginPage = ({ showModal, setShowModal, setShowModalReg }) => {
     }
     // res.status === 200 && setAuthTokens(res.data.data.token);
     // setLoggedIn(true);
-    console.log(res);
+    // console.log(res);
   };
 
   // if (isLoggedIn) {

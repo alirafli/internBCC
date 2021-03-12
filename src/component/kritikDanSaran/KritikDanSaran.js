@@ -9,15 +9,20 @@ import {
   Button,
 } from "./StyleKritikDanSaran";
 import KritikDanSarannya from "../../api/forUserLogin";
-import swal from "sweetalert";
+import KritikSaranCard from "../kritikSaranCard/KritikSaran";
 
 const KritikDanSaran = () => {
   const [nama, setNama] = useState("");
   const [telpon, setTelpon] = useState("");
   const [email, setEmail] = useState("");
   const [komen, setKomen] = useState("");
+  const [modal, setModal] = useState(false);
 
   let count = 0;
+
+  const openModal = () => {
+    setModal((prev) => !prev);
+  };
 
   const SendKritik = () => {
     KritikDanSarannya.post("/suggest/register", {
@@ -30,9 +35,8 @@ const KritikDanSaran = () => {
         SendKritik();
         count++;
       }
-      swal("Terima kasih Kritik dan Sarannya!", ``, "success");
-      console.log(res);
-      console.log("selesai");
+      // console.log(res);
+      // console.log("selesai");
     });
   };
   return (
@@ -86,7 +90,18 @@ const KritikDanSaran = () => {
           />
         </Space>
         <Space btn>
-          <Button onClick={SendKritik}>Kirim</Button>
+          <Button
+            onClick={() => {
+              SendKritik();
+              openModal();
+            }}
+          >
+            Kirim
+          </Button>
+          <KritikSaranCard
+          modal={modal}
+          setModal={setModal}
+          />
         </Space>
       </Right>
     </Container>

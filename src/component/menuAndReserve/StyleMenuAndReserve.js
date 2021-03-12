@@ -26,8 +26,7 @@ export const ParagraphOne = styled.p`
 export const Container = styled.div`
   margin-top: 3rem;
   display: grid;
-  grid-template-areas:
-    "menuResto menuResto menuResto pemesanan";
+  grid-template-areas: "menuResto menuResto menuResto pemesanan";
   @media only screen and (max-width: 808px) {
     grid-template-areas:
       "menuResto"
@@ -128,8 +127,8 @@ export const ButtonWrapper = styled.div`
   flex-direction: column;
 `;
 export const ButtonPesan = styled(Link)`
-  background-color: ${(props) => (props.extraa ? "white" : "#ff7a45")};
-  color: ${(props) => (props.extraa ? "#ff7a45" : "#fff")};
+  background-color: #ff7a45;
+  color: #fff;
   border: solid;
   padding: 1.3rem 0;
   width: 100%;
@@ -143,8 +142,28 @@ export const ButtonPesan = styled(Link)`
   text-align: center;
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => (props.extraa ? "#f4f4f4" : "#e75e27")};
-    color: ${(props) => (props.extraa ? "#e75e27" : "")};
+    background-color: #e75e27;
+  }
+`;
+
+export const Button2 = styled(Link)`
+  background-color: white;
+  color: #ff7a45;
+  border: solid;
+  padding: 1.3rem 0;
+  width: 100%;
+  margin-top: 3rem;
+  font-style: normal;
+  font-family: Montserrat;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  transition: 0.2s all;
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background-color: #f4f4f4;
+    color: #e75e27;
   }
   &:disabled {
     background-color: #c4c4c4;

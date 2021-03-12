@@ -15,9 +15,8 @@ import { useAuth } from "../../config/Auth";
 import ReservationProofCard from "../../component/reservationProofCard/ReservationProofCard";
 import forUserLogin from "../../api/forUserLogin";
 import { Link } from "react-scroll";
-import Footer from "../../component/footer/Footer"
-import KritikDanSaran from "../../component/kritikDanSaran/KritikDanSaran"
-
+import Footer from "../../component/footer/Footer";
+import KritikDanSaran from "../../component/kritikDanSaran/KritikDanSaran";
 
 const UserProfile = () => {
   const { setAuthTokens } = useAuth();
@@ -132,11 +131,13 @@ const UserProfile = () => {
             5. Ulasan harus relevan dengan restology dan restoran - restoran
             terkait
           </Paragraph>
-          <Paragraph>
+          <Paragraph style={{ paddingBottom: "4rem" }}>
             6. Apabila melanggar ketentuan - ketentuan tentang pemberian ulasan,
             maka ulasan tersebut akan dihapus
           </Paragraph>
-          <Title borders id="kritik">Kritik & Saran</Title>
+          <Title borders id="kritik">
+            Kritik & Saran
+          </Title>
           <KritikDanSaran />
         </ContentWrapper>
       </Container>
