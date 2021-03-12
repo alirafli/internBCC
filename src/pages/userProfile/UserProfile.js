@@ -14,12 +14,15 @@ import {
 import { useAuth } from "../../config/Auth";
 import ReservationProofCard from "../../component/reservationProofCard/ReservationProofCard";
 import forUserLogin from "../../api/forUserLogin";
+import { Link } from "react-scroll";
+import Footer from "../../component/footer/Footer"
+import KritikDanSaran from "../../component/kritikDanSaran/KritikDanSaran"
+
 
 const UserProfile = () => {
   const { setAuthTokens } = useAuth();
   const [reservation, getReservation] = useState([]);
   const [userData, getUserData] = useState([]);
- 
 
   const { authTokens } = useAuth();
   const userId = userData.id;
@@ -28,7 +31,6 @@ const UserProfile = () => {
     setAuthTokens();
     localStorage.clear();
   };
-
 
   useEffect(() => {
     const fetchReservationProof = () => {
@@ -61,11 +63,27 @@ const UserProfile = () => {
     <>
       <NavbarBackground />
       <Container>
-        <NavWrapper></NavWrapper>
+        <NavWrapper>
+          <div style={{ position: "sticky", top: 0 }}>
+            <Link to="profile">
+              <HeaderText padding>Profile</HeaderText>
+            </Link>
+            <Link to="bukti-pemesanan">
+              <HeaderText padding> Bukti Pemesanan</HeaderText>
+            </Link>
+            <Link to="syarat">
+              <HeaderText padding>Syarat & Ketentuan</HeaderText>
+            </Link>
+            <Link to="kritik">
+              <HeaderText padding>Kritik & Saran</HeaderText>
+            </Link>
+          </div>
+        </NavWrapper>
         <ContentWrapper>
-          <Title>Profile</Title>
+          <Title id="profile">Profile</Title>
           <Wrapper>
-            <ProfileIcon background={userData.image} /> <HeaderText>{userData.name}</HeaderText>
+            <ProfileIcon background={userData.image} />{" "}
+            <HeaderText>{userData.name}</HeaderText>
           </Wrapper>
           <Wrapper>
             <HeaderText>Email</HeaderText>
@@ -80,20 +98,48 @@ const UserProfile = () => {
               Log Out
             </LogoutButton>
           </Wrapper>
-          <Title>Bukti Pemesanan</Title>
+          <Title id="bukti-pemesanan">Bukti Pemesanan</Title>
           {reservation.map((props) => (
             <ReservationProofCard
-            content={props.content}
-            key={props.restaurantId}
-            seat={props.number_of_seat}
-            place={props.place}
-            date={props.datetime}
-            time={props.time}
-            restoranId={props.restaurantId}
+              content={props.content}
+              key={props.restaurantId}
+              seat={props.number_of_seat}
+              place={props.place}
+              date={props.datetime}
+              time={props.time}
+              restoranId={props.restaurantId}
             />
           ))}
+          <Title borders id="syarat">
+            Syarat & Ketentuan
+          </Title>
+          <Paragraph>
+            1. Reservasi tidak dapat dibatalkan dalam keadaan apapun
+          </Paragraph>
+          <Paragraph>
+            2. Pembayaran dilakukan maksimum 1 jam dari pemesanan dilakukan
+          </Paragraph>
+          <Paragraph>
+            3. Kecurangan mengenai pembayaran dan pemesanan akan mendapatkan
+            sanksi
+          </Paragraph>
+          <Paragraph>
+            4. Segala tindakan plagiarisme, bahasa yang tidak senonoh, ancaman,
+            dan promosi dilarang
+          </Paragraph>
+          <Paragraph>
+            5. Ulasan harus relevan dengan restology dan restoran - restoran
+            terkait
+          </Paragraph>
+          <Paragraph>
+            6. Apabila melanggar ketentuan - ketentuan tentang pemberian ulasan,
+            maka ulasan tersebut akan dihapus
+          </Paragraph>
+          <Title borders id="kritik">Kritik & Saran</Title>
+          <KritikDanSaran />
         </ContentWrapper>
       </Container>
+      <Footer />
     </>
   );
 };
