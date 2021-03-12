@@ -53,7 +53,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ProfileIcon = styled.div`
-  background-image: url(${UserIcon});
+  background-image: url(${((props) => props.background)});
   margin-right: 2rem;
   margin-top: 2.4rem;
   margin-bottom: 4.1rem;

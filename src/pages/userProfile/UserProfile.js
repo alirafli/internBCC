@@ -65,15 +65,15 @@ const UserProfile = () => {
         <ContentWrapper>
           <Title>Profile</Title>
           <Wrapper>
-            <ProfileIcon /> <HeaderText>ali</HeaderText>
+            <ProfileIcon background={userData.image} /> <HeaderText>{userData.name}</HeaderText>
           </Wrapper>
           <Wrapper>
             <HeaderText>Email</HeaderText>
-            <Paragraph>example@gmail.com</Paragraph>
+            <Paragraph>{userData.email}</Paragraph>
           </Wrapper>
           <Wrapper>
             <HeaderText>Telepon</HeaderText>
-            <Paragraph>021-14045</Paragraph>
+            <Paragraph>{userData.iat}</Paragraph>
           </Wrapper>
           <Wrapper button endss>
             <LogoutButton onClick={Logout} to="/">
