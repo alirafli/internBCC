@@ -34,7 +34,7 @@ export const Paragraph = styled.p`
 `;
 
 export const NavWrapper = styled.div`
-  background: red;
+
   width: 30%;
 `;
 export const ContentWrapper = styled.div`
@@ -46,9 +46,9 @@ export const Wrapper = styled.div`
   align-items: center;
   ${(props) => (props.button ? `justify-content: flex-end;` : null)}
   ${(props) =>
-    props.end
-      ? `border-bottom-style: solid;
-    border-color: rgba(34, 34, 34, 0.1); padding-bottom: 2.7rem;`
+    props.endss
+      ?( `border-bottom-style: solid;
+    border-color: rgba(34, 34, 34, 0.1); padding-bottom: 2.7rem; margin-bottom: 3rem;`)
       : null}
 `;
 

@@ -13,7 +13,7 @@ import {
   Bold,
 } from "./StyleRestoDetailCom";
 
-const restoDetailCom = ({alamat, rate, ulasan}) => {
+const restoDetailCom = ({ alamat, rate, ulasan }) => {
   return (
     <Information>
       <Detail>
@@ -25,7 +25,7 @@ const restoDetailCom = ({alamat, rate, ulasan}) => {
           <ParagraphOne>kopisam.com</ParagraphOne>
         </DetailUp>
         <DetailDown>
-          <ParagraphOne>Tentang Restoran</ParagraphOne>
+          <TitleOne>Tentang Restoran</TitleOne>
           <ParagraphOne>Protokol COVID-19</ParagraphOne>
           <ParagraphOne>Indoor</ParagraphOne>
           <ParagraphOne>Outdoor</ParagraphOne>
@@ -39,13 +39,20 @@ const restoDetailCom = ({alamat, rate, ulasan}) => {
         </DetailMaps>
       </Detail>
       <Score>
-        <TitleOne>Penilaian & ulasan</TitleOne>
-        <ParagraphOne><Bold>{rate}.0</Bold>, {ulasan} ulasan</ParagraphOne>
-        <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
-        <TitleOne>Kategori</TitleOne>
-        <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
-        <TitleOne>Koleksi</TitleOne>
-        <ParagraphOne>Kopi, Cepat saji</ParagraphOne>
+        <div style={{marginBottom: "3rem"}}>
+          <TitleOne>Penilaian & ulasan</TitleOne>
+          <ParagraphOne none>
+            <Bold>{rate}.0</Bold>, {ulasan} ulasan
+          </ParagraphOne>
+        </div>
+        <div style={{marginBottom: "3rem"}}>
+          <TitleOne>Kategori</TitleOne>
+          <ParagraphOne none>Kopi, Cepat saji</ParagraphOne>
+        </div>
+        <div style={{marginBottom: "3rem"}}>
+          <TitleOne>Koleksi</TitleOne>
+          <ParagraphOne none>Kopi, Cepat saji</ParagraphOne>
+        </div>
       </Score>
     </Information>
   );

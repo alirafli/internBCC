@@ -11,11 +11,11 @@ export const TitleOne = styled.h1`
 `;
 
 export const ParagraphOne = styled.p`
-  margin-top: 1.3rem;
+  margin-top: ${((props) => props.none ? "0" : "1.3rem")};
   font-family: Raleway;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   line-height: 1.6rem;
   letter-spacing: 0.03em;
 `;
@@ -86,6 +86,7 @@ export const Salin = styled.button`
   border: 0.2rem solid #ff7a45;
   background: rgb(76, 175, 80, 0);
   margin-top: 2rem;
+  outline: none;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
@@ -95,7 +96,13 @@ export const Salin = styled.button`
   line-height: 1.7rem;
   padding: 1rem 3rem 1rem 3rem;
   margin: 2rem 1.3rem;
-  cursor: pointer;
+  transition: 300ms;
+  &:hover {
+    cursor: pointer;
+    color: #fc6327;
+    border: 0.2rem solid #fc6327;
+    padding: 1.2rem 3.2rem 1.2rem 3.2rem;
+  }
 `;
 
 export const Bold = styled.span`

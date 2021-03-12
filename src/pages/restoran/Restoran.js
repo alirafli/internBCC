@@ -9,7 +9,6 @@ import {
   Photo2,
   Photo3,
   Photo4,
-  MenuNext,
 } from "./StyleRestoran";
 import Restaurant from "../../api/forUserLogin";
 import Footer from "../../component/footer/Footer";
@@ -36,21 +35,24 @@ const Restoran = (props) => {
       setLoading(true);
       const res = await Restaurant.get(`/restaurants/${restoId}`);
       getRestoDetail(res.data.data);
-      if (res.data.data.restoimgs.length == 0) {
+      if (res.data.data.restoimgs.length === 0) {
       } else {
         setImage(res.data.data.restoimgs);
       }
-      setLoading(false);
       // console.log(res.data.data);
+      setLoading(false);
     };
     fetchRestoDetail();
-  }, []);
+    setLoading(false);
+  }, [restoId]);
   return (
     <>
       <NavbarBackground />
-      {loading ? null : (
+      {loading ? (
+        <h1>wait</h1>
+      ) : (
         <>
-          <Container data-aos-once="true" data-aos="fade-up">
+          <Container>
             <Title>{restoDetail.name}</Title>
             <Gallery>
               <Banner background={image[4].image} />

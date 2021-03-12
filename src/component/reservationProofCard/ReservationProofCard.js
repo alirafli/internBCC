@@ -5,53 +5,57 @@ import {
   Right,
   NamaResto,
   Paragraph,
+  Title,
+  Wrapper,
 } from "./StyleReservationProofCard";
-import { useAuth } from "../../config/Auth";
-import forUserLogin from "../../api/forUserLogin";
+import forUserLogin from "../../api/forUserLogin"
 
-const ReservationProofCard = () => {
-  const [reservation, getReservation] = useState([]);
-  const [userData, getUserData] = useState([]);
-  const { authTokens } = useAuth();
+const ReservationProofCard = ({ content, seat, place, date, time, restoranId }) => {
+  const [restoDetail, getRestoDetail] = useState([]);
+  const restoId = restoranId;
 
   useEffect(() => {
-    const fetchReservationProof = () => {
-      forUserLogin
-        .get(`/booking/find/${userData.id}`, {
-          headers: { Authorization: `Bearer ${authTokens}` },
-        })
-        .then((res) => {
-          getReservation(res.data.data);
-          console.log(res.data.data);
-        });
+    const fetchRestoDetail = async () => {
+      const res = await forUserLogin.get(`/restaurants/${restoId}`);
+      getRestoDetail(res.data.data);
+      // console.log(res.data.data);
     };
-    authTokens && fetchReservationProof();
-  }, [authTokens]);
-
-  useEffect(() => {
-    const fetchUserData = () => {
-      forUserLogin
-        .get("/user/profile", {
-          headers: { Authorization: `Bearer ${authTokens}` },
-        })
-        .then((res) => {
-          getUserData(res.data.data);
-          // console.log(res.data.data);
-        });
-    };
-    authTokens && fetchUserData();
-  }, [authTokens]);
-
+    fetchRestoDetail();
+  }, [restoId]);
   return (
-    <Container>
-      <Left>
-        <NamaResto>Kopi Sam</NamaResto>
-        <Paragraph>Jalan Sudirman, Jakarta Pusat</Paragraph>
-        <Paragraph>Telepon : 021 - 14045</Paragraph>
-        <Paragraph></Paragraph>
-      </Left>
-      <Right></Right>
-    </Container>
+    <>
+      <Container>
+        <Left>
+          <Wrapper>
+            <NamaResto>{restoDetail.name}</NamaResto>
+            <Paragraph>{restoDetail.address}</Paragraph>
+            <Paragraph>Telepon : {restoDetail.phone}</Paragraph>
+          </Wrapper>
+          <Wrapper>
+            <Paragraph>{time}</Paragraph>
+            <Paragraph>{date}</Paragraph>
+            <Paragraph>{seat} Orang</Paragraph>
+          </Wrapper>
+          <Paragraph sizess>
+            Perlihatkan bukti ini kepada pihak restoran, sebagai konfirmasi
+            bukti reservasi.
+          </Paragraph>
+        </Left>
+        <Right>
+          <Wrapper>
+            <Title>Catatan Permintaan</Title>
+            <Paragraph>- {place}</Paragraph>
+            <Paragraph>- {content}</Paragraph>
+          </Wrapper>
+          <Wrapper>
+            <Title>Pesanan</Title>
+            <Paragraph>Tidak ada menu yang dipesan</Paragraph>
+            {/* <Paragraph>Rp 75.000</Paragraph> */}
+          </Wrapper>
+          {/* <Title>Total Rp. 230.00</Title> */}
+        </Right>
+      </Container>
+    </>
   );
 };
 

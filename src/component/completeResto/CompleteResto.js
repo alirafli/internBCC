@@ -29,6 +29,7 @@ const CompleteResto = (props) => {
             <CompleteRestoCard
               background={resto.restoimgs[0].image}
               id={resto.id}
+              key={resto.id}
               RestoId={resto.CatRestocat.restaurantId}
               name={resto.name}
               address={resto.address}
