@@ -90,7 +90,7 @@ const UserProfile = () => {
           </Wrapper>
           <Wrapper>
             <HeaderText>Telepon</HeaderText>
-            <Paragraph>{userData.iat}</Paragraph>
+            <Paragraph>{userData.phone}</Paragraph>
           </Wrapper>
           <Wrapper button endss>
             <LogoutButton onClick={Logout} to="/">

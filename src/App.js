@@ -37,7 +37,7 @@ function App() {
             <Route path="/Resto/all" component={AnekaKuliner} />
             <Route path="/Resto/restaurant/:id" component={Restoran} />
             <Route path="/foodReserv" component={ReservationFood} />
-            <Route path="/menu/:id" component={ReservationWithMenu} />
+            <PrivateRoute path="/menu/:id" component={ReservationWithMenu} />
             <PrivateRoute path="/user-profile" component={UserProfile} />
             <Route path="/" component={Home} />
           </Switch>
