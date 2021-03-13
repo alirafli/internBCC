@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import MapsFoto from "../../media/img/mapSementara.svg"
 // import { Link } from "react-router-dom";
 
 export const TitleOne = styled.h1`
@@ -44,6 +45,8 @@ box-shadow: 0px 4px 5px rgba(34, 34, 34, 0.15);
   grid-gap: 1.7rem;
   border-radius: 1rem;
   padding: 1.7rem;
+  padding-left: 3rem;
+  padding-top: 1.9rem;
 `;
 
 export const DetailUp = styled.div`
@@ -65,7 +68,7 @@ export const DetailMaps = styled.div`
 export const Maps = styled.div`
   width: 24.7rem;
   height: 17rem;
-  background: red;
+  background-image: url(${MapsFoto});
   @media only screen and (max-width: 497px) {
     width: 15rem;
     height: 10rem;

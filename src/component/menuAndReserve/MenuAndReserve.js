@@ -63,12 +63,6 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
   const LoginFirst = () => {
     swal("login terlebih dahulu!");
   };
-
-  // if (control) {
-  //   console.log("konfirmasi");
-  //   SendReservation();
-  //   setControl(false);
-  // }
   return (
     <Container>
       <MenuResto>
@@ -115,6 +109,15 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
                 <Option value="10 : 00">10 : 00</Option>
                 <Option value="11 : 00">11 : 00</Option>
                 <Option value="12 : 00">12 : 00</Option>
+                <Option value="13 : 00">13 : 00</Option>
+                <Option value="14 : 00">14 : 00</Option>
+                <Option value="15 : 00">15 : 00</Option>
+                <Option value="16 : 00">16 : 00</Option>
+                <Option value="17 : 00">17 : 00</Option>
+                <Option value="18 : 00">18 : 00</Option>
+                <Option value="19 : 00">19 : 00</Option>
+                <Option value="20 : 00">20 : 00</Option>
+                <Option value="21 : 00">21 : 00</Option>
               </Select>
             </LocateWrapper>
           </TitleWrapper>
@@ -130,6 +133,9 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
                 <Option value="3">3</Option>
                 <Option value="4">4</Option>
                 <Option value="5">5</Option>
+                <Option value="6">6</Option>
+                <Option value="7">7</Option>
+                <Option value="8">8</Option>
               </Select>
             </LocateWrapper>
           </TitleWrapper>
@@ -168,7 +174,7 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
           onChange={(e) => setComment(e.target.value)}
         />
         <ButtonWrapper>
-          <Button2 type="submit" to="#" >
+          <Button2 type="submit" to={`/menu/${restoId}`}>
             Pesan menu minuman & makanan
           </Button2>
           <ButtonPesan
@@ -194,6 +200,7 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
             inOut={inOut}
             people={people}
             restoId={restoId}
+            bukti={1}
           />
 
           <SuccessPayment payResult={payResult} setPayResult={setPayResult} />

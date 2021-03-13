@@ -13,16 +13,16 @@ import {
   Bold,
 } from "./StyleRestoDetailCom";
 
-const restoDetailCom = ({ alamat, rate, ulasan }) => {
+const restoDetailCom = ({ alamat, rate, ulasan, email, open, phone, web }) => {
   return (
     <Information>
       <Detail>
         <DetailUp>
           <TitleOne>Kontrak Restoran</TitleOne>
-          <ParagraphOne>08:00 WIB - 12:00 WIB</ParagraphOne>
-          <ParagraphOne>021-14045</ParagraphOne>
-          <ParagraphOne>kopisam@gmail.com</ParagraphOne>
-          <ParagraphOne>kopisam.com</ParagraphOne>
+          <ParagraphOne>{open}</ParagraphOne>
+          <ParagraphOne>{phone}</ParagraphOne>
+          <ParagraphOne>{email}</ParagraphOne>
+          <ParagraphOne>{web}</ParagraphOne>
         </DetailUp>
         <DetailDown>
           <TitleOne>Tentang Restoran</TitleOne>

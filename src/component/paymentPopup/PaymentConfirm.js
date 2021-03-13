@@ -21,6 +21,8 @@ const PaymentConfirm = ({
   comment,
   inOut,
   restoId,
+  bukti,
+  makanMinum,
 }) => {
   const { authTokens } = useAuth();
 
@@ -37,6 +39,25 @@ const PaymentConfirm = ({
       },
       { headers: { Authorization: `Bearer ${authTokens}` } }
     );
+  };
+
+  const SendReservationMenu = () => {
+    Restaurant.post(
+      "/booking/create",
+      {
+        restaurantId: restoId,
+        number_of_seat: people,
+        datetime: date,
+        time: timeReserv,
+        place: inOut,
+        content: comment,
+        food: [makanMinum]
+      },
+      { headers: { Authorization: `Bearer ${authTokens}` } }
+    ).then((res) => {
+      console.log(res)
+      console.log(makanMinum)
+    })
   };
 
   return (
@@ -61,7 +82,15 @@ const PaymentConfirm = ({
               onClick={() => {
                 setPayConfirm((prev) => !prev);
                 setPayResult((prev) => !prev);
-                SendReservation();
+                if(bukti === 1) {
+                  SendReservation();
+                  // console.log("satu")
+                }
+
+                if (bukti === 2) {
+                  SendReservationMenu();
+                  // console.log("dua")
+                }
               }}
             >
               Ya, lanjutkan ke pembayaran
