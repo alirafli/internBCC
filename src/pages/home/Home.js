@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import VariousCulinary from "../../component/variousCulinary/VariousCulinary";
 import PlaceCategory from "../../component/placeCategory/PlaceCategory";
 import { Container, Paragraph, Title } from "./HomeStyle";
@@ -8,10 +8,14 @@ import Footer from "../../component/footer/Footer";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import SearchBar from "../../component/searchBar/SearchBar";
+import ComingSoon from "../../component/comingSoon/ComingSoon"
 
 const Home = () => {
-  // const [searchFill, setSearchFill] = useState("Jakarta");
-
+  const [control, setControl] = useState(false);
+  const [modal, setModal] = useState(false);
+  const openModal = () => {
+    setModal((prev) => !prev);
+  };
   useEffect(() => {
     Aos.init({ duration: 900 });
   }, []);
@@ -29,7 +33,8 @@ const Home = () => {
       </Container>
       <PlaceCategory place="Jakarta" />
       <VariousCulinary />
-      <RestoRegistration />
+      <RestoRegistration setControl={setControl} openModal={openModal} />
+      <ComingSoon modal={modal} setModal={setModal} />
       <FoodRecommend />
       <Footer />
     </div>

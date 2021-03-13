@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Title, Paragraph, Button } from "./StyleRestoRegistration";
 
-const RestoRegistration = () => {
-
+const RestoRegistration = ({ setControl, openModal }) => {
   return (
     <Container data-aos-once="true" data-aos="fade-up">
       <Title>Memiliki restoran?</Title>
       <Paragraph>Bergabunglah menjadi mitra kami. </Paragraph>
-      <Button>Pelajari Lanjut</Button>
+      <Button
+        onClick={() => {
+          setControl((prev) => !prev);
+          openModal();
+        }}
+      >
+        Pelajari Lanjut
+      </Button>
     </Container>
   );
 };

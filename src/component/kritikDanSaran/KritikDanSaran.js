@@ -33,6 +33,7 @@ const KritikDanSaran = () => {
     }).then((res) => {
       if (count < 0) {
         SendKritik();
+        setNama("")
         count++;
       }
       // console.log(res);
@@ -94,6 +95,10 @@ const KritikDanSaran = () => {
             onClick={() => {
               SendKritik();
               openModal();
+              setKomen("")
+              setEmail("")
+              setTelpon("")
+              setNama("aaaaaaaaaa")
             }}
           >
             Kirim
