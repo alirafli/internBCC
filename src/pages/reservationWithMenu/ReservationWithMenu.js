@@ -18,7 +18,6 @@ import {
   ButtonPesan,
 } from "./StyleReservationWithMenu";
 import { NavbarBackground } from "../../component/navbar/StyleNavbar";
-// import { useAuth } from "../../config/Auth";
 import { withRouter } from "react-router-dom";
 import Restaurant from "../../api/forUserLogin";
 import RadioButton from "../../component/priceChoice/StylePriceChoice";
@@ -44,7 +43,6 @@ const ReservationWithMenu = (props) => {
   const openPayChoose = () => {
     setPayChoose((prev) => !prev);
   };
-  // const { authTokens } = useAuth();
   useEffect(() => {
     const fetchFood = async () => {
       const res = await Restaurant.get(`/food/foods/${FoodRestoId}`);
@@ -59,7 +57,6 @@ const ReservationWithMenu = (props) => {
     fetchFood();
     fetchDrink();
   }, [FoodRestoId]);
-  // console.log(makanMinum)
   return (
     <>
       <NavbarBackground />

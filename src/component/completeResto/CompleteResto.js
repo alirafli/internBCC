@@ -19,8 +19,7 @@ const CompleteResto = (props) => {
     };
     fetchRestoAll();
   }, [restoId]);
-
-  // console.log(restoId)
+  
   return (
     <Container>
       {Loading

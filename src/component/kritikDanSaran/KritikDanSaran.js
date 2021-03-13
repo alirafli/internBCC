@@ -95,10 +95,6 @@ const KritikDanSaran = () => {
             onClick={() => {
               SendKritik();
               openModal();
-              setKomen("")
-              setEmail("")
-              setTelpon("")
-              setNama("aaaaaaaaaa")
             }}
           >
             Kirim

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import UserIcon from "../../media/img/userProfile.svg"
 
 export const NavWrapper = styled.nav`
   position: absolute;

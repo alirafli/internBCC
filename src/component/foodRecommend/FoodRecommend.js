@@ -1,7 +1,6 @@
 import React from 'react'
 import FoodList from '../foodList/FoodList'
 import {Container, Title, Paragraph} from "./StyleFoodRecommend"
-// import { Link } from "react-router-dom";
 
 const FoodRecommend = () => {
   return (

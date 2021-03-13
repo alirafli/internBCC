@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import MapsFoto from "../../media/img/mapSementara.svg"
-// import { Link } from "react-router-dom";
 
 export const TitleOne = styled.h1`
   font-family: Montserrat;

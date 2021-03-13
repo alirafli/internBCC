@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Title, Paragraph, Button } from "./StyleRestoRegistration";
 
 const RestoRegistration = ({ setControl, openModal }) => {

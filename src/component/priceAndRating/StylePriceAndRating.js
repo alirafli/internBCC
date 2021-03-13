@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 30%;
@@ -13,5 +12,3 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
 margin-bottom: 2rem;
 `
-// border-bottom-style: solid;
-// border-color: rgba(34, 34, 34, 0.1);

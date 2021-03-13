@@ -24,7 +24,7 @@ const AnekaKuliner = () => {
   return (
     <>
       <NavbarBackground />
-      <Container data-aos-once="true" data-aos="fade-up">
+      <Container>
         <Title>Aneka Kuliner</Title>
         <Paragraph>Pilihan kuliner terbaik dan menarik</Paragraph>
         <Wrapper>

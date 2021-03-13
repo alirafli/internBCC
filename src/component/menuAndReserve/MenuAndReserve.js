@@ -51,6 +51,7 @@ const MenuAndReserve = ({ seat, OurRestoId }) => {
       getFood(res.data.data);
       // console.log(res.data.data);
     };
+    
     const fetchDrink = async () => {
       const res = await Restaurant.get(`/food/drink/${restoId}`);
       getDrink(res.data.data);

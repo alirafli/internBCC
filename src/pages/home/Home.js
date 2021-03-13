@@ -8,7 +8,7 @@ import Footer from "../../component/footer/Footer";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import SearchBar from "../../component/searchBar/SearchBar";
-import ComingSoon from "../../component/comingSoon/ComingSoon"
+import ComingSoon from "../../component/comingSoon/ComingSoon";
 
 const Home = () => {
   const [control, setControl] = useState(false);

@@ -7,11 +7,11 @@ import { AuthContext } from "./config/Auth";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import FullPlaceCollection from "./pages/fullPlaceCollection/FullPlaceCollection";
 import FullVariousCulinary from "./pages/fullVariousCulinary/FullVariousCulinary";
-import AnekaKuliner from "./pages/anekaKuliner/AnekaKuliner"
-import Restoran from "./pages/restoran/Restoran"
-import UserProfile from "./pages/userProfile/UserProfile"
-import ReservationFood from "./pages/reservationFood/ReservationFood"
-import ReservationWithMenu from "./pages/reservationWithMenu/ReservationWithMenu"
+import AnekaKuliner from "./pages/anekaKuliner/AnekaKuliner";
+import Restoran from "./pages/restoran/Restoran";
+import UserProfile from "./pages/userProfile/UserProfile";
+import ReservationFood from "./pages/reservationFood/ReservationFood";
+import ReservationWithMenu from "./pages/reservationWithMenu/ReservationWithMenu";
 
 function App() {
   const existingToken = JSON.parse(localStorage.getItem("tokens"));
@@ -27,15 +27,18 @@ function App() {
       <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
           <GlobalStyle />
-          <Navbar isLoggedIn={!authTokens ? false:true}/>
+          <Navbar isLoggedIn={!authTokens ? false : true} />
           <Switch>
             <Route path="/PlaceCategory" component={FullPlaceCollection} />
-            <Route path="/VariousCulinary/:id" component={FullVariousCulinary} />
+            <Route
+              path="/VariousCulinary/:id"
+              component={FullVariousCulinary}
+            />
             <Route path="/Resto/all" component={AnekaKuliner} />
             <Route path="/Resto/restaurant/:id" component={Restoran} />
             <Route path="/foodReserv" component={ReservationFood} />
             <Route path="/menu/:id" component={ReservationWithMenu} />
-            <PrivateRoute path="/user-profile" component={UserProfile} /> 
+            <PrivateRoute path="/user-profile" component={UserProfile} />
             <Route path="/" component={Home} />
           </Switch>
         </Router>

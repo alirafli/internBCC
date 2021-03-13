@@ -61,9 +61,7 @@ const ReservationProofCard = ({
           <Wrapper>
             <Title>Pesanan</Title>
             <Paragraph>Tidak ada menu yang dipesan</Paragraph>
-            {/* <Paragraph>Rp 75.000</Paragraph> */}
           </Wrapper>
-          {/* <Title>Total Rp. 230.00</Title> */}
         </Right>
       </Container>
     </>

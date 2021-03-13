@@ -19,7 +19,6 @@ const RatingChoice = () => {
   const rates4 = [1, 2, 3, 4];
   const rates5 = [1, 2, 3, 4, 5];
   let keys = 0;
-  // console.log("Rating: " + radioValue);
 
   const matches = useMediaQuery(
     json2mq({
