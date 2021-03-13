@@ -13,6 +13,7 @@ export const Text = styled.p`
   line-height: 1.4rem;
   letter-spacing: 0.03em;
   margin-right: 3.4rem;
+  margin-bottom: 1.3rem;
   padding: .5rem;
 `;
 

@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text, Container, Wrapper } from "./StyleFoodList";
+import Restaurant from "../../api/forUserLogin";
 
 const FoodList = () => {
+  const [foodCat, setFoodCat] = useState([]);
+
+  useEffect(() => {
+    const fetchFoodCat = async () => {
+      const res = await Restaurant.get("/restaurants/all/cat");
+      setFoodCat(res.data.data);
+      // console.log(res.data.data);
+    };
+    fetchFoodCat();
+  }, []);
+
   return (
     <Container>
       <Wrapper>
-        <Text>Nasi Padang</Text>
-        <Text>Mie Ayam</Text>
-        <Text>Bakso</Text>
-        <Text>Fast Food</Text>
-        <Text>Chineese food</Text>
-        <Text>Steak</Text>
-        <Text>Kebab</Text>
-        <Text>Kopi</Text>
+        {foodCat.map((props) => (
+          <Text key={props.id}>{props.name}</Text>
+        ))}
         <Text>Roti bakar</Text>
         <Text>Western food</Text>
         <Text>Indonesian food</Text>
-      </Wrapper>
-
-      <Wrapper>
         <Text>Snack</Text>
         <Text>Japanese food</Text>
         <Text>Sushi</Text>
