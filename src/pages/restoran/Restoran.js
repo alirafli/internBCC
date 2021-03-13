@@ -65,6 +65,10 @@ const Restoran = (props) => {
               alamat={restoDetail.address}
               rate={restoDetail.rate}
               ulasan={restoDetail.review}
+              email={restoDetail.email}
+              open={restoDetail.open}
+              phone={restoDetail.phone}
+              web={restoDetail.web}
             />
             <MenuAndReserve
               seat={restoDetail.number_of_seat}
