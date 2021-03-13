@@ -21,21 +21,21 @@ const Ulasan = () => {
         <ProfileWrapper>
           <Profile />
           <NameDateWrapper>
-            <UserName>ali rafli</UserName>
+            <UserName>Ali Rafli</UserName>
             <UserName date>03 feb 2021</UserName>
           </NameDateWrapper>
         </ProfileWrapper>
-        <Comment>LALALALALA</Comment>
+        <Comment>makanannya Enak Banget!</Comment>
       </Content>
       <Content>
         <ProfileWrapper>
           <Profile />
           <NameDateWrapper>
-            <UserName>dragon balls</UserName>
-            <UserName date>04 mar 2021</UserName>
+            <UserName>Dany Rheza</UserName>
+            <UserName date>12 feb 2021</UserName>
           </NameDateWrapper>
         </ProfileWrapper>
-        <Comment>KERENNN</Comment>
+        <Comment>ganyesel makan disini!</Comment>
       </Content>
 
       <CommentWrapper>
